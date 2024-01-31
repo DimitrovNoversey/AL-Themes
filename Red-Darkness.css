@@ -5,11 +5,10 @@
 
 /* snippets */
 @import url("https://anzuftnw.github.io/files/fullscreen-bg.css");
-
-/* settings */
+  /* settings */
 :root {
   /* simple-bg settings */
-  --bg-img: url("imglink");
+  --bg-img: url("https://i.ibb.co/9nv93dQ/0131-1.gif");
   --bg-clr: unset;
   --bg-scr: fixed;
   --bg-pos: center;
@@ -17,10 +16,82 @@
   --bg-sze: cover;
 
   /* fullscren-bg settings */
-  --fullscreen-bg: rgb(1, 1, 0);
+  --fullscreen-bg: rgba(1, 1, 0, 0.5);
   --fullscreen-filter: none;
-  --fullscreen-banner: visible; /* visible / hidden */
+  --fullscreen-banner: hidden; /* visible / hidden */
+
+	/* hoi */
+	.activity-feed-wrap .wrap {
+    background: rgba(1, 1, 0, 0.5) !important; /* Activity Color */
+	}
+
+	.reply {
+    background: rgba(1, 1, 0, 0.5) !important; /* Activity Color */
+	}
+	
+	.content-wrap {
+    background: rgba(1, 1, 0, 0.5) !important; /* Bio Color */
+	}
+
+	.footer {
+    background: rgba(1, 1, 0, 1) !important; /* Milestones 2nd bg */
+	}
+
+	.progress {
+    background: rgba(26, 26, 26, 1) !important; /* Milestones 3nd bg */
+	}
+
+	.bar {
+    background: rgba(218, 65, 39, 1) !important; /* Milestones bar */
+	}
+
+	.site-theme-dark .overview .favourite.studio {
+    background: rgba(1, 1, 0, 0.5) !important; /* Favourite studio bg color */
+	}
+
+	.load-more[data-v-6f203cf2] {
+    background: rgba(1, 1, 0, 0.5) !important; /* Load more button bg color */
+	}
+
+	.el-textarea__inner {
+    background: rgba(1, 1, 0, 0.5) !important; /* Write activity field bg color */
+	}
+
+	.el-textarea {
+    background: rgba(1, 1, 0, 0) !important; /* Behind write activity field bg color */
+	}
+
+	.markdown-editor {
+    background: rgba(1, 1, 0, 0.5) !important; /* Markdown editor bg color */
+	}
+
+	.button.cancel[data-v-c574a71c] {
+    background: rgba(15, 15, 15, 1) !important; /* Cancel button bg color */
+		color: rgb(var(--color-text-bright));	/* Cancel button text color */
+	}
+
+	.button[data-v-c574a71c] {
+    background: rgba(147, 33, 14, 1) !important; /* Regular button bg color */
+	}
+
+	.nav-wrap {
+		background: rgba(1, 1, 0, 1) !important;
+    border-radius: 15px 15px 0 0;
+	}
+
+	.list-section {
+    background: rgba(1, 1, 0, 0.5) !important;
+	}
+
+	.banner {
+    height: calc(100vh - 46px) !important;
+	}
+
+	.avatar {
+		outline: 7px solid #010100
+	}
 }
+
 
 .site-theme-dark {
     --color-background: 1, 1, 0;

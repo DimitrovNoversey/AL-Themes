@@ -53,7 +53,7 @@
 		/* Milestones bar */
 	}
 
-	.favourites-wrap[data-v-ddf96a3c] {
+	.favourites-wrap {
     	background: rgba(1, 1, 0, 0.5) !important;
 	}
 
@@ -78,7 +78,7 @@
 		/* Favourite studio bg color */
 	}
 
-	.load-more[data-v-6f203cf2] {
+	.load-more {
 		background: rgba(1, 1, 0, 0.5) !important;
 		/* Load more button bg color */
 	}
@@ -98,14 +98,14 @@
 		/* Markdown editor bg color */
 	}
 
-	.button.cancel[data-v-c574a71c] {
+	.button.cancel {
 		background: rgba(15, 15, 15, 1) !important;
 		/* Cancel button bg color */
 		color: rgb(var(--color-text-bright));
 		/* Cancel button text color */
 	}
 
-	.button[data-v-c574a71c] {
+	.button {
 		background: rgba(147, 33, 14, 1) !important;
 		/* Regular button bg color */
 	}
@@ -135,7 +135,7 @@
 		background: rgba(1, 1, 0, 0.5) !important; /* Filter search bar */
 	}
 
-	.filter-group .active[data-v-170179fc] {
+	.filter-group .active {
 		background: rgba(1, 1, 0, 1) !important; /* Active list */
 	}
 
@@ -160,7 +160,7 @@
 		background: rgba(1, 1, 0, 0.5) !important;
 	}
 
-	.x-axis[data-v-3251fadf] {
+	.x-axis {
     	background: rgba(var(--color-background-300),1);
 	}
 
@@ -184,8 +184,8 @@
 	    max-width: 1190px;
 	}
 	
-	.banner-content[data-v-1cc2919e] {
-	    padding-left: 80px;
+	.banner-content {
+	    padding-left: 100px;
 	}
 }
 

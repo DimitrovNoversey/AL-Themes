@@ -53,6 +53,26 @@
 		/* Milestones bar */
 	}
 
+	.favourites-wrap[data-v-ddf96a3c] {
+    	background: rgba(1, 1, 0, 0.5) !important;
+	}
+
+	.favourites.preview .favourites-wrap .favourite, .favourites.preview .favourites-wrap>div {
+	    margin-bottom: 10px;
+	    margin-right: 10px;
+	}
+
+	.favourite {
+	    height: 104px;
+	    width: 77px;
+		filter: brightness(40%);
+		transition: filter 0.3s ease;
+	}
+
+	.favourite:hover {
+	  filter: brightness(100%); /* Increase brightness on hover */
+	}
+	
 	.site-theme-dark .overview .favourite.studio {
 		background: rgba(1, 1, 0, 0.5) !important;
 		/* Favourite studio bg color */

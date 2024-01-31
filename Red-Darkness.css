@@ -105,7 +105,7 @@
 		/* Cancel button text color */
 	}
 
-	.button {
+	.button[data-v-c574a71c] {
 		background: rgba(147, 33, 14, 1) !important;
 		/* Regular button bg color */
 	}

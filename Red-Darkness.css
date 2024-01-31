@@ -5,3 +5,46 @@
 
 /* snippets */
 @import url("https://anzuftnw.github.io/files/fullscreen-bg.css");
+
+/* settings */
+:root {
+  /* simple-bg settings */
+  --bg-img: url("imglink");
+  --bg-clr: unset;
+  --bg-scr: fixed;
+  --bg-pos: center;
+  --bg-rpt: no-repeat;
+  --bg-sze: cover;
+
+  /* fullscren-bg settings */
+  --fullscreen-bg: rgb(1, 1, 0);
+  --fullscreen-filter: none;
+  --fullscreen-banner: visible; /* visible / hidden */
+}
+
+.site-theme-dark {
+    --color-background: 1, 1, 0;
+    --color-foreground: 13, 13, 13;
+    --color-foreground-grey: 26, 26, 26;
+    --color-foreground-grey-dark: 38, 38, 38;
+}
+
+.site-theme-dark .nav-unscoped {
+    background: rgb(13, 13, 13);
+    color: #a0b1c5
+}
+
+.site-theme-dark .nav-unscoped.transparent {
+    background: rgba(13, 13, 13,.5);
+    color: #e5e7ea
+}
+
+.site-theme-dark .nav-unscoped.transparent:hover {
+    background: rgba(13, 13, 13,.9);
+    color: #a0b1c5
+}
+
+.logo {
+    content: url(https://files.catbox.moe/82y3zu.png);
+    transition: scale 1s, opacity .5s;
+}

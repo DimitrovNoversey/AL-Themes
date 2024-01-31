@@ -171,7 +171,7 @@
 	}
 
 	.activity-feed {
-	    grid-template-columns: 1fr;
+	    display: block;
 	}
 
 	.container {

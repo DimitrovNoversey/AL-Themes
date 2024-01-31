@@ -5,117 +5,194 @@
 
 /* snippets */
 @import url("https://anzuftnw.github.io/files/fullscreen-bg.css");
-  /* settings */
+
+/* settings */
 :root {
-  /* simple-bg settings */
-  --bg-img: url("https://i.ibb.co/9nv93dQ/0131-1.gif");
-  --bg-clr: unset;
-  --bg-scr: fixed;
-  --bg-pos: center;
-  --bg-rpt: no-repeat;
-  --bg-sze: cover;
+	/* simple-bg settings */
+	--bg-img: url("https://i.ibb.co/9nv93dQ/0131-1.gif");
+	--bg-clr: unset;
+	--bg-scr: fixed;
+	--bg-pos: center;
+	--bg-rpt: no-repeat;
+	--bg-sze: cover;
 
-  /* fullscren-bg settings */
-  --fullscreen-bg: rgba(1, 1, 0, 0.5);
-  --fullscreen-filter: none;
-  --fullscreen-banner: hidden; /* visible / hidden */
+	/* fullscren-bg settings */
+	--fullscreen-bg: rgba(1, 1, 0, 0.5);
+	--fullscreen-filter: none;
+	--fullscreen-banner: hidden;
+	/* visible / hidden */
 
-	/* hoi */
+	/* Coloring */
 	.activity-feed-wrap .wrap {
-    background: rgba(1, 1, 0, 0.5) !important; /* Activity Color */
+		background: rgba(1, 1, 0, 0.5) !important;
+		/* Activity Color */
 	}
 
 	.reply {
-    background: rgba(1, 1, 0, 0.5) !important; /* Activity Color */
+		background: rgba(1, 1, 0, 0.5) !important;
+		/* Activity Color */
 	}
-	
+
 	.content-wrap {
-    background: rgba(1, 1, 0, 0.5) !important; /* Bio Color */
+		background: rgba(1, 1, 0, 0.5) !important;
+		/* Bio Color */
 	}
 
 	.footer {
-    background: rgba(1, 1, 0, 1) !important; /* Milestones 2nd bg */
+		background: rgba(1, 1, 0, 1) !important;
+		/* Milestones 2nd bg */
 	}
 
 	.progress {
-    background: rgba(26, 26, 26, 1) !important; /* Milestones 3nd bg */
+		background: rgba(26, 26, 26, 1) !important;
+		/* Milestones 3nd bg */
 	}
 
 	.bar {
-    background: rgba(218, 65, 39, 1) !important; /* Milestones bar */
+		background: rgba(218, 65, 39, 1) !important;
+		/* Milestones bar */
 	}
 
 	.site-theme-dark .overview .favourite.studio {
-    background: rgba(1, 1, 0, 0.5) !important; /* Favourite studio bg color */
+		background: rgba(1, 1, 0, 0.5) !important;
+		/* Favourite studio bg color */
 	}
 
 	.load-more[data-v-6f203cf2] {
-    background: rgba(1, 1, 0, 0.5) !important; /* Load more button bg color */
+		background: rgba(1, 1, 0, 0.5) !important;
+		/* Load more button bg color */
 	}
 
 	.el-textarea__inner {
-    background: rgba(1, 1, 0, 0.5) !important; /* Write activity field bg color */
+		background: rgba(1, 1, 0, 0.5) !important;
+		/* Write activity field bg color */
 	}
 
 	.el-textarea {
-    background: rgba(1, 1, 0, 0) !important; /* Behind write activity field bg color */
+		background: rgba(1, 1, 0, 0) !important;
+		/* Behind write activity field bg color */
 	}
 
 	.markdown-editor {
-    background: rgba(1, 1, 0, 0.5) !important; /* Markdown editor bg color */
+		background: rgba(1, 1, 0, 0.5) !important;
+		/* Markdown editor bg color */
 	}
 
 	.button.cancel[data-v-c574a71c] {
-    background: rgba(15, 15, 15, 1) !important; /* Cancel button bg color */
-		color: rgb(var(--color-text-bright));	/* Cancel button text color */
+		background: rgba(15, 15, 15, 1) !important;
+		/* Cancel button bg color */
+		color: rgb(var(--color-text-bright));
+		/* Cancel button text color */
 	}
 
 	.button[data-v-c574a71c] {
-    background: rgba(147, 33, 14, 1) !important; /* Regular button bg color */
+		background: rgba(147, 33, 14, 1) !important;
+		/* Regular button bg color */
 	}
 
 	.nav-wrap {
 		background: rgba(1, 1, 0, 1) !important;
-    border-radius: 15px 15px 0 0;
+		border-radius: 15px 15px 0 0;
 	}
 
 	.list-section {
-    background: rgba(1, 1, 0, 0.5) !important;
+		background: rgba(1, 1, 0, 0.5) !important;
 	}
 
 	.banner {
-    height: calc(100vh - 46px) !important;
+		height: calc(100vh - 46px) !important;
 	}
 
 	.avatar {
 		outline: 7px solid #010100
 	}
+
+	.progress {
+    	background: rgba(1, 1, 0, 0) !important; /* List odd table color */
+	}
+
+	.el-input__inner {
+		background: rgba(1, 1, 0, 0.5) !important; /* Filter search bar */
+	}
+
+	.filter-group .active[data-v-170179fc] {
+		background: rgba(1, 1, 0, 1) !important; /* Active list */
+	}
+
+	.el-slider__runway {
+		background: rgba(1, 1, 0, 1) !important; /* Year slider */
+	}
+
+	.el-slider__button {
+	    background-color: rgb(var(--color-blue));
+	    border-color: rgb(var(--color-blue)); /* Year slider dot */
+	}
+
+	.bar-chart-wrap {
+		background: rgba(1, 1, 0, 0.5) !important;
+	}
+
+	.pie-chart {
+		background: rgba(1, 1, 0, 0.5) !important;
+	}
+
+	.horizontal-scroller {
+		background: rgba(1, 1, 0, 0.5) !important;
+	}
+
+	.x-axis[data-v-3251fadf] {
+    	background: rgba(var(--color-background-300),1);
+	}
+
+	/* Layout */
+	.section > .stats-wrap {
+	    grid-template-columns: 1fr !important;
+	    grid-column-gap: 30px !important;
+	}
+
+	.activity-feed {
+	    grid-template-columns: 1fr;
+	}
+
+	.container {
+	    max-width: 1190px !important;
+	    padding-left: 0px !important;
+	    padding-right: 0px !important;
+	}
+
+	.header-wrap .nav-wrap {
+	    max-width: 1190px;
+	}
+	
+	.banner-content[data-v-1cc2919e] {
+	    padding-left: 80px;
+	}
 }
 
 
 .site-theme-dark {
-    --color-background: 1, 1, 0;
-    --color-foreground: 13, 13, 13;
-    --color-foreground-grey: 26, 26, 26;
-    --color-foreground-grey-dark: 38, 38, 38;
+	--color-background: 1, 1, 0;
+	--color-foreground: 13, 13, 13;
+	--color-foreground-grey: 26, 26, 26;
+	--color-foreground-grey-dark: 38, 38, 38;
 }
 
 .site-theme-dark .nav-unscoped {
-    background: rgb(13, 13, 13);
-    color: #a0b1c5
+	background: rgb(13, 13, 13);
+	color: #a0b1c5
 }
 
 .site-theme-dark .nav-unscoped.transparent {
-    background: rgba(13, 13, 13,.5);
-    color: #e5e7ea
+	background: rgba(13, 13, 13, .5);
+	color: #e5e7ea
 }
 
 .site-theme-dark .nav-unscoped.transparent:hover {
-    background: rgba(13, 13, 13,.9);
-    color: #a0b1c5
+	background: rgba(13, 13, 13, .9);
+	color: #a0b1c5
 }
 
 .logo {
-    content: url(https://files.catbox.moe/82y3zu.png);
-    transition: scale 1s, opacity .5s;
+	content: url(https://files.catbox.moe/82y3zu.png);
+	transition: scale 1s, opacity .5s;
 }

@@ -160,6 +160,10 @@
 		background: rgba(1, 1, 0, 0.5) !important;
 	}
 
+	[data-v-72dc5b51] .horizontal-scroller>div {
+	    background: rgba(1, 1, 0, 0.5) !important;
+	}
+
 	.x-axis {
     	background: rgba(var(--color-background-300),1);
 	}

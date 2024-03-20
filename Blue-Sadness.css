@@ -807,5 +807,9 @@ body {
     scrollbar-width: none;
 }
 
+* {
+    scrollbar-width: none;
+}
+
 
 /*------------------------ CSS END ------------------------*/

@@ -936,7 +936,7 @@ body, .site-theme-dark, .site-theme-contrast, .user-page-unscoped.green, .user-p
     font-size: 1rem!important;
     margin-top: 1px!important;
     color: rgb(var(--color-blue));
-    text-transform: uppercase !important;
+    text-transform: lowercase !important;
     font-weight: 600 !important;
     text-align: center !important;
 }
@@ -972,7 +972,7 @@ a[href="/user/DimitrovNo2/"][data-v-04d66030]:not(.avatar):not(.user):not(.link)
     font-size: 1rem!important;
     margin-top: 5px!important;
     color: rgb(185, 110, 110)!important;
-    text-transform: uppercase !important;
+    text-transform: lowercase !important;
     font-weight: 600 !important;
 }
 /* Title for Friends */
@@ -1032,7 +1032,7 @@ a[href="/user/zDenny/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(
     font-size: 1rem!important;
     margin-top: 5px!important;
     color: rgb(182, 126, 177)!important;
-    text-transform: uppercase !important;
+    text-transform: lowercase !important;
     font-weight: 600 !important;
 }
 
@@ -1043,7 +1043,7 @@ a[href="/user/zDenny/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(
     font-size: 1rem!important;
     margin-top: 5px!important;
     color: rgba(255, 255, 255, 0.6)!important;
-    text-transform: uppercase !important;
+    text-transform: lowercase !important;
     font-weight: 500 !important;
 }
 

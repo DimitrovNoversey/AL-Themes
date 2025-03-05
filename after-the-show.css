@@ -962,6 +962,7 @@ body, .site-theme-dark, .site-theme-contrast, .user-page-unscoped.green, .user-p
     display: flex;
     justify-content: center;
     flex-direction: column;
+    font-weight: 600;
 }
 
 /* Title for Me */
@@ -969,8 +970,8 @@ a[href="/user/DimitrovN/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):n
 a[href="/user/DimitrovNo2/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after{
     content: "♥ Main Character"!important;
     display: block!important;
-    font-size: 1rem!important;
-    margin-top: 5px!important;
+    font-size: 1.2rem!important;
+    margin-top: 2px!important;
     color: rgb(185, 110, 110)!important;
     text-transform: lowercase !important;
     font-weight: 600 !important;
@@ -1029,8 +1030,8 @@ a[href="/user/xKazehaya/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):n
 a[href="/user/zDenny/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after {
     content: "♦ Side Character"!important;
     display: block!important;
-    font-size: 1rem!important;
-    margin-top: 5px!important;
+    font-size: 1.2rem!important;
+    margin-top: 2px!important;
     color: rgb(182, 126, 177)!important;
     text-transform: lowercase !important;
     font-weight: 600 !important;
@@ -1040,8 +1041,8 @@ a[href="/user/zDenny/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(
 .name[data-v-04d66030]::after {
     content: "♠ NPC"!important;
     display: block!important;
-    font-size: 1rem!important;
-    margin-top: 5px!important;
+    font-size: 1.2rem!important;
+    margin-top: 2px!important;
     color: rgba(255, 255, 255, 0.6)!important;
     text-transform: lowercase !important;
     font-weight: 500 !important;

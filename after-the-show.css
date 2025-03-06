@@ -917,6 +917,13 @@ body, .site-theme-dark, .site-theme-contrast, .user-page-unscoped.green, .user-p
     width: auto;
 }
 
+/*--- text selection styling ---*/
+*::selection {
+    background-color: rgba(var(--color-blue), 0.8);
+    color: rgb(var(--color-text));
+    text-shadow: 0 0 2px rgba(var(--color-overlay), 0.3);
+}
+
 /* =====================================
         @sekuji inspired CSS
 ===================================== */

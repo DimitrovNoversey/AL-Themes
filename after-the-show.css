@@ -19,6 +19,7 @@
 
 @import url("https://voidnyan.github.io/anilist-css/css/social.css");
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url("https://anzuftnw.github.io/files/simple-theme-framework.css");
 
 /*------------------------ MAIN SECTION — stock layout, keep this while changing layouts ------------------------*/
@@ -81,7 +82,7 @@
 .hohButton,
 .activity-feed .time,
 * {
-    font-family: "Asap", sans-serif;
+    font-family: "Mulish", sans-serif;
 }
 
 /*--- lowercase styling ---*/
@@ -591,6 +592,7 @@ body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.c
 .container > .activity-entry .reply,
 .container > .activity-entry .markdown-editor,
 .container > .activity-entry .el-textarea__inner {
+    border-radius: 10px !important;
     background: rgba(10, 10, 10, 0.55) !important;
 }
 .el-dropdown-menu.el-popper.el-dropdown-menu--small,
@@ -831,6 +833,14 @@ body {
     /* Increase brightness on hover */
 }
 
+/*--- remove space under publish button ---*/
+.actions[data-v-c574a71c] {
+    margin-bottom: 0px;
+}
+.activity-replies[data-v-2820a6bb] {
+    margin: 10px;
+}
+
 /*--- scrollbar styling ---*/
 ::-webkit-scrollbar {
     width: 6px;
@@ -1060,6 +1070,7 @@ a[href="/user/zDenny/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(
     background: rgba(20, 20, 20, 0.7);
     height: 15px;
     width: 50px;
+    border-radius: 0px !important;
 }
 .entry-dropdown[data-v-04d66030]:hover {
     transform: scale(1)!important;
@@ -1068,13 +1079,14 @@ a[href="/user/zDenny/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(
 }
 .entry-dropdown .el-dropdown-link[data-v-04d66030] {
     display: flex;
-    align-items: center; 
     justify-content: center; 
     height: 100%;
 }
 .svg-inline--fa.fa-w-10 {
     width: 0.625em;
     height: auto;
+    margin-bottom: 1px;
+    margin-top: -1px;
 }
 
 /*------------------------ CSS END ------------------------*/

@@ -934,6 +934,29 @@ body, .site-theme-dark, .site-theme-contrast, .user-page-unscoped.green, .user-p
     text-shadow: 0 0 2px rgba(var(--color-overlay), 0.3);
 }
 
+/*--- cursor styling ---*/
+/*--- (pack by: https://www.deviantart.com/jepricreations) ---*/
+body { /* Default Pointer */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/arrow.cur'), auto !important;
+  }
+  
+  a, button { /* Links, buttons, clickables. */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;
+  }
+  
+  input[type="text"], textarea { /* Text input fields */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/ibeam.cur'), text !important;
+  }
+  
+  .moveable { /* Moveable elements */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizeall.cur'), move !important;
+  }
+  
+  /* Extra clickable selectors */
+  .button[data-v-5fb0ec91], .action.has-label, .time .action[data-v-04d66030], .actions .time .action[data-v-732ef224], .markdown-editor *, .header > .name[data-v-732ef224]:after, .button[data-v-c574a71c], .actions .action[data-v-04d66030], #nav .wrap .search, .search[data-v-62eacfff] svg, .user[data-v-62eacfff], .unfollow[data-v-39573fe2], .edit, .entry-dropdown .el-dropdown-link[data-v-04d66030], .el-checkbox, .el-input-number__decrease, .el-input-number__increase, .el-dropdown-menu__item, .load-more[data-v-6f203cf2], span { 
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;    
+  }
+
 /* =====================================
         @sekuji inspired CSS
 ===================================== */

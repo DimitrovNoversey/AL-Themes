@@ -953,8 +953,12 @@ body { /* Default Pointer */
   }
   
   /* Extra clickable selectors */
-  .button[data-v-5fb0ec91], .action.has-label, .time .action[data-v-04d66030], .actions .time .action[data-v-732ef224], .markdown-editor *, .header > .name[data-v-732ef224]:after, .button[data-v-c574a71c], .actions .action[data-v-04d66030], #nav .wrap .search, .search[data-v-62eacfff] svg, .user[data-v-62eacfff], .unfollow[data-v-39573fe2], .edit, .entry-dropdown .el-dropdown-link[data-v-04d66030], .el-checkbox, .el-input-number__decrease, .el-input-number__increase, .el-dropdown-menu__item, .load-more[data-v-6f203cf2], span { 
+  .button[data-v-5fb0ec91], .action.has-label, .time .action[data-v-04d66030], .actions .time .action[data-v-732ef224], .markdown-editor *, .header > .name[data-v-732ef224]:after, .button[data-v-c574a71c], .actions .action[data-v-04d66030], #nav .wrap .search, .search[data-v-62eacfff] svg, .user[data-v-62eacfff], .unfollow[data-v-39573fe2], .edit, .entry-dropdown .el-dropdown-link[data-v-04d66030], .el-checkbox, .el-input-number__decrease, .el-input-number__increase, .el-dropdown-menu__item, .load-more[data-v-6f203cf2], .el-date-editor .el-icon-circle-close, .el-select .el-input .el-select__caret, .el-select-dropdown__item, .favourite[data-v-0228dea0], .list-editor-wrap .header .save-btn, .list-editor-wrap .list-editor .body .delete-btn, .theme-switch .icon[data-v-0567dd85], .el-slider__runway, .random-btn[data-v-c5b3c852], span { 
     cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;    
+  }
+
+  .el-slider__button, .el-slider__button-wrapper { /* Slider button */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizewe.cur'), move !important;
   }
 
 /* =====================================

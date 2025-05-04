@@ -12,6 +12,8 @@ Modified by: @DimitrovN
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url("https://anzuftnw.github.io/files/simple-theme-framework.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url(https://cdn.jsdelivr.net/gh/pseudo-AL/profile-CSS@main/imports/border-radius-styling-1.0.6.css);
 
 /*------------------------ GLOBAL VARIABLES ------------------------*/
 :root {
@@ -701,6 +703,41 @@ a.favourite:hover::after {
     margin-bottom: 0px;
 }
 
+/* Comments */
+.activity-entry > .wrap > .actions > .action.replies svg {
+    display: none;
+}
+.activity-entry > .wrap > .actions {
+    display: flex;
+}
+.activity-entry > .wrap > .actions > .action.likes {
+    display: inline-block;
+    margin-top: 10px
+}
+.activity-entry > .wrap > .actions > .action.replies {
+    display: inline-block;
+    margin-top: 11px;
+}
+.activity-entry > .wrap > .actions > .action.replies .count {
+    position: relative;
+    bottom: 1px;
+    margin-right: 1px;
+    font-size: 13px;
+}
+.activity-entry > .wrap > .actions > .action.replies::after {
+    display: inline-block;
+    font-family: "bootstrap-icons";
+    font-size: 10px;
+    content: "\F258";
+    margin-right: 4px;
+    margin-top: -10px;
+}
+
+/* Subscribed Button */
+.time .action.active[data-v-04d66030] {
+    color: rgba(var(--color-blue));
+}
+
 /*------------------------ MEDIA LIST STYLING ------------------------*/
 /* List head styling */
 .list-head>div {
@@ -751,88 +788,122 @@ a.favourite:hover::after {
 }
 
 /*------------------------ USER TITLES STYLING ------------------------*/
+/* User name/avatar styling */
+.name[data-v-04d66030] { /* Main post name */
+    font-size: 1.7rem;
+}
+
+.name[data-v-732ef224] { /* Reply name */
+    font-size: 1.5rem;
+    margin-left: 12px;
+    line-height: 10px;
+    font-weight: 600;
+}
+
+.text .avatar[data-v-04d66030] { /* Main post avatar */
+    height: 50px;
+    width: 50px;
+}
+
+.avatar[data-v-732ef224] { /* Reply avatar */
+    height: 40px;
+    width: 40px;
+}
+
 /* Title for main user */
-a[href="/user/DimitrovN/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/DimitrovNo2/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after{
+a[href="/user/DimitrovN/"].name:after,
+a[href="/user/DimitrovNo2/"].name:after {
     content: "♥ Main Character"!important;
     display: block!important;
-    font-size: 1.2rem!important;
-    margin-top: 2px!important;
+    font-size: 1.3rem!important;
     color: rgb(185, 110, 110)!important;
     text-transform: lowercase !important;
     font-weight: 600 !important;
 }
 
-/* Title for friends - consolidated selector for maintainability */
-a[href="/user/0Vi/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/ACasualViewer/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/aerglow/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/anonymity/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Biswa29/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/BtwIsSanti/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/ChxrryLeaves/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/CukieMunster/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/D4an/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Danger11/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Elfiee/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Envertzz/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/etekusat/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/ethanrrs/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/fujoshii/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/HaraNiki/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/hinaboe/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/HungTee/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/JoreruM/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Kaguyachinchin/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Kansugi/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Kenruneko/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Kryuell/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Kusogaki/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/LikeAFerro/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Luzius/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Mcsuper/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Miraka/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Mob1000/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/MrCreepyAvss/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/NeilNatsumi/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/nozomemee/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Okabekiyouma/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/prtrncyon/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/pseudo/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/RecoveryBoy/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/RecoveryGirl/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Reloading/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/SamtheAniman/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/sekuji/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/SheyCroix/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/svqilxy/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/TheBrigade/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Thekingmcking/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Tniefi/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/Tringapore/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/TwoBeers/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/voidnyan/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/wswsasd/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/xKazehaya/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after,
-a[href="/user/zDenny/"][data-v-04d66030]:not(.avatar):not(.user):not(.link):not(.primary-link)::after {
+/* Title for friends */
+a[href="/user/0Vi/"].name:after,
+a[href="/user/ACasualViewer/"].name:after,
+a[href="/user/aerglow/"].name:after,
+a[href="/user/anonymity/"].name:after,
+a[href="/user/Biswa29/"].name:after,
+a[href="/user/BtwIsSanti/"].name:after,
+a[href="/user/ChxrryLeaves/"].name:after,
+a[href="/user/CukieMunster/"].name:after,
+a[href="/user/D4an/"].name:after,
+a[href="/user/Danger11/"].name:after,
+a[href="/user/Elfiee/"].name:after,
+a[href="/user/Envertzz/"].name:after,
+a[href="/user/etekusat/"].name:after,
+a[href="/user/ethanrrs/"].name:after,
+a[href="/user/fujoshii/"].name:after,
+a[href="/user/HaraNiki/"].name:after,
+a[href="/user/hinaboe/"].name:after,
+a[href="/user/HungTee/"].name:after,
+a[href="/user/JoreruM/"].name:after,
+a[href="/user/Kaguyachinchin/"].name:after,
+a[href="/user/Kansugi/"].name:after,
+a[href="/user/Kenruneko/"].name:after,
+a[href="/user/Kryuell/"].name:after,
+a[href="/user/Kusogaki/"].name:after,
+a[href="/user/LikeAFerro/"].name:after,
+a[href="/user/Luzius/"].name:after,
+a[href="/user/Mcsuper/"].name:after,
+a[href="/user/Miraka/"].name:after,
+a[href="/user/Mob1000/"].name:after,
+a[href="/user/MrCreepyAvss/"].name:after,
+a[href="/user/NeilNatsumi/"].name:after,
+a[href="/user/nozomemee/"].name:after,
+a[href="/user/Okabekiyouma/"].name:after,
+a[href="/user/prtrncyon/"].name:after,
+a[href="/user/pseudo/"].name:after,
+a[href="/user/RecoveryBoy/"].name:after,
+a[href="/user/RecoveryGirl/"].name:after,
+a[href="/user/Reloading/"].name:after,
+a[href="/user/SamtheAniman/"].name:after,
+a[href="/user/sekuji/"].name:after,
+a[href="/user/SheyCroix/"].name:after,
+a[href="/user/svqilxy/"].name:after,
+a[href="/user/TheBrigade/"].name:after,
+a[href="/user/Thekingmcking/"].name:after,
+a[href="/user/Tniefi/"].name:after,
+a[href="/user/Tringapore/"].name:after,
+a[href="/user/TwoBeers/"].name:after,
+a[href="/user/voidnyan/"].name:after,
+a[href="/user/wswsasd/"].name:after,
+a[href="/user/xKazehaya/"].name:after,
+a[href="/user/zDenny/"].name:after {
     content: "♦ Side Character"!important;
     display: block!important;
-    font-size: 1.2rem!important;
-    margin-top: 2px!important;
+    font-size: 1.3rem!important;
+    margin-top: 6px!important;
     color: rgb(182, 126, 177)!important;
     text-transform: lowercase !important;
     font-weight: 600 !important;
 }
 
 /* Title for other users */
-.name[data-v-04d66030]::after {
+.name[data-v-04d66030]::after,
+.name[data-v-732ef224]::after,
+.name::after {
     content: "♠ NPC"!important;
     display: block!important;
-    font-size: 1.2rem!important;
-    margin-top: 2px!important;
+    font-size: 1.3rem!important;
+    margin-top: 6px!important;
     color: rgba(255, 255, 255, 0.6)!important;
     text-transform: lowercase !important;
     font-weight: 500 !important;
+}
+
+/* Apply standard margin for all comment names */
+.reply > .header > a.name:after {
+    margin-top: 5px!important;
+    font-size: 1.2rem!important;
+}
+
+.reply > .header {
+    display: flex;
+    align-items: center;
 }
 
 /*------------------------ DROPDOWN & ENTRY STYLING ------------------------*/
@@ -1052,5 +1123,3 @@ input[type="text"], textarea { /* Text input fields */
 .el-slider__button, .el-slider__button-wrapper { /* sideway slider button */
   cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizewe.cur'), move !important;
 }
-
-

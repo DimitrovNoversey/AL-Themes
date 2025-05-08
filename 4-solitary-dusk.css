@@ -3,7 +3,7 @@
 /*
 --- Credits ---
 Base theme: @pseudo (@voidnyan ~85%, @Anzu ~10%)
-Additional components from @sekuji: Name styling, Activity History, Activity User Titles, Entry Dropdown
+Additional components from @sekuji: Name styling, Activity History, Activity User Titles, Entry Dropdown, Spotify Widget
 Modified by: @DimitrovN
 */
 
@@ -13,6 +13,7 @@ Modified by: @DimitrovN
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url("https://anzuftnw.github.io/files/simple-theme-framework.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 @import url(https://cdn.jsdelivr.net/gh/pseudo-AL/profile-CSS@main/imports/border-radius-styling-1.0.6.css);
 
 /*------------------------ GLOBAL VARIABLES ------------------------*/
@@ -21,12 +22,12 @@ Modified by: @DimitrovN
     --theme-primary: 197, 158, 113;
     --theme-primary-dim: 207, 160, 133;
     --theme-manga-color: 207, 29, 29;
-    
+
     /* Text Colors */
     --text-primary: 240, 240, 240;
     --text-secondary: 240, 240, 240;
     --text-tertiary: 240, 240, 240;
-    
+
     /* Background Colors */
     --bg-overlay: 20, 20, 20;
     --bg-container: 20, 20, 20, 0.4;
@@ -34,7 +35,8 @@ Modified by: @DimitrovN
     --bg-element-lighter: 10, 10, 10, 0.35;
     --bg-nav: 10, 10, 10, 0.825;
     --bg-dropdown: 20, 20, 20, 0.9;
-    
+    --bg-pop-up: 197, 158, 113, 0.9;
+
     /* Layout */
     --border-radius: 10px;
     --padding-v: 30px;
@@ -42,7 +44,7 @@ Modified by: @DimitrovN
     --brt: var(--border-radius) var(--border-radius) 0 0;
     --brb: 0 0 var(--border-radius) var(--border-radius);
     --pdh: var(--padding-v) var(--padding-h);
-    
+
     /* Favorites Layout */
     --height: 115px;
     --width: 77.6px;
@@ -58,27 +60,36 @@ Modified by: @DimitrovN
     --fourth-row: calc(var(--third-row) + var(--height) + var(--gap));
     --fifth-row: calc(var(--fourth-row) + var(--height) + var(--gap));
     --first-row-manga: calc(var(--fifth-row) + var(--height) + 61.3px);
-    
+
     /* Content Labels */
     --write-up: "write-up";
     --review: "review";
     --series: "whole series";
     --season: "season only";
     --movie: "movie only";
-    
+
     /* Transitions */
     --transition-standard: 0.2s ease-in-out;
-    
+
     /* Font Families */
     --font-primary: "Mulish", sans-serif;
+
+    /* Spotify Widget */
+    --spotfy-url-profile: url(https://spotify-github-profile.kittinanx.com/api/view?uid=31pn7otq65qjootjfdhsxq752rzy&cover_image=true&theme=natemoo-re&show_offline=true&background_color=ffffff&interchange=false&bar_color=c59e71&bar_color_cover=false);
 }
 
 /*------------------------ THEME OVERRIDES ------------------------*/
 /* Apply theme colors to AniList variables */
-body, .site-theme-dark, .site-theme-contrast, .user-page-unscoped.green, .user-page-unscoped.pink, .user-page-unscoped.orange, :root {
+body,
+.site-theme-dark,
+.site-theme-contrast,
+.user-page-unscoped.green,
+.user-page-unscoped.pink,
+.user-page-unscoped.orange,
+:root {
     --color-blue: var(--theme-primary) !important;
     --color-blue-dim: var(--theme-primary-dim) !important;
-    
+
     --color-text: var(--text-primary);
     --color-text-light: var(--text-secondary);
     --color-text-lighter: var(--text-tertiary);
@@ -97,7 +108,8 @@ body, .site-theme-dark, .site-theme-contrast, .user-page-unscoped.green, .user-p
 }
 
 /* Manga color for automail */
-.activity-manga_list > div > div > div > div > .title, .hohPinned .list .title[href^="/manga/"] {
+.activity-manga_list>div>div>div>div>.title,
+.hohPinned .list .title[href^="/manga/"] {
     --color-green: var(--theme-manga-color) !important;
 }
 
@@ -113,7 +125,7 @@ body {
 }
 
 /* Profile avatar */
-.banner-content > .avatar {
+.banner-content>.avatar {
     max-width: 250px !important;
     max-height: none !important;
 }
@@ -122,13 +134,16 @@ body {
 .banner {
     visibility: hidden;
 }
-.banner > .container {
+
+.banner>.container {
     visibility: visible;
     justify-content: center;
 }
-.review-card > .banner {
+
+.review-card>.banner {
     visibility: visible;
 }
+
 .banner:not(.review-card > .banner) {
     height: calc(100vh - 46px) !important;
     background-position: 50% 50% !important;
@@ -144,17 +159,20 @@ body {
     padding-left: 50px !important;
     padding-right: 50px !important;
 }
-.header-wrap > .nav-wrap {
+
+.header-wrap>.nav-wrap {
     max-width: 1140px !important;
     margin: 0 auto;
     border-radius: var(--brt);
     position: relative;
 }
+
 .content.container {
     background: rgba(var(--bg-container)) !important;
     padding: 1px;
     border-radius: var(--brb);
 }
+
 .content.container:not(:has(.el-dialog__wrapper)) {
     backdrop-filter: blur(3px);
 }
@@ -174,16 +192,16 @@ body {
 .el-scrollbar,
 .el-tooltip__popper,
 .tooltip .content,
-.user-follow > .name,
+.user-follow>.name,
 .section-header,
 .banner-content,
 .option,
-.content > .user-social,
+.content>.user-social,
 .content .submissions,
 .el-dropdown-menu.el-popper.el-dropdown-menu--small,
 .el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium,
-.container > .activity-entry .wrap,
-.container > .activity-entry .reply,
+.container>.activity-entry .wrap,
+.container>.activity-entry .reply,
 .el-dialog__body .title,
 .el-dialog__body .save-btn,
 .el-dialog__body .input-title,
@@ -208,10 +226,10 @@ body {
 .stats-wrap,
 .nav,
 .action.has-label,
-.stats > .title,
+.stats>.title,
 .filters,
 .section-header,
-.title > :not(.notes),
+.title> :not(.notes),
 .list-head>div,
 .score,
 .progress,
@@ -224,13 +242,13 @@ body {
 .switch,
 .favourites-wrap,
 .read-review,
-.content > .header,
+.content>.header,
 .follower-badge,
 .action.has-label.active,
 .nav-btn,
 .el-tooltip__popper,
-.pie-chart.vertical-layout > .title,
-.options > .option,
+.pie-chart.vertical-layout>.title,
+.options>.option,
 .tooltip .content,
 .donator-badge:not(.donator-badge.rainbow),
 textarea::placeholder,
@@ -241,7 +259,7 @@ textarea::placeholder,
 .el-dialog__body .input-title,
 *.el-picker-panel.el-date-picker.el-popper,
 .quick-search input[placeholder="Search AniList"],
-.result-col > .title,
+.result-col>.title,
 .embed,
 .primary-links,
 .footer,
@@ -282,6 +300,7 @@ textarea::placeholder,
     background: rgba(var(--bg-nav)) !important;
     backdrop-filter: blur(2px);
 }
+
 #nav.nav {
     background-color: rgba(20, 20, 20, 0.6) !important;
     transition: all 0s ease 0s, top 0.5s ease 0s !important;
@@ -290,15 +309,17 @@ textarea::placeholder,
     width: 1140px;
     border-radius: 0 0 10px 10px !important;
 }
+
 #nav.nav:not(:has(.quick-search.visible)) {
     backdrop-filter: blur(2px);
 }
 
 /* Navbar link hover animations */
-.nav > .link {
+.nav>.link {
     position: relative;
 }
-.nav > .link::after {
+
+.nav>.link::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -308,12 +329,14 @@ textarea::placeholder,
     background: rgb(var(--theme-primary));
     transition: var(--transition-standard);
 }
-.nav > .router-link-active::after {
+
+.nav>.router-link-active::after {
     left: 0;
     width: 100%;
     background: rgb(var(--theme-primary));
 }
-.nav > .link:hover::after {
+
+.nav>.link:hover::after {
     left: 0;
     width: 100%;
     background: rgb(var(--theme-primary));
@@ -321,28 +344,24 @@ textarea::placeholder,
 }
 
 /* Navbar link renaming */
-.nav-wrap :is(
-a[href*="/animelist"],
-a[href*="/mangalist"],
-a[href$="/DimitrovN/"]
-) {
+.nav-wrap :is(a[href*="/animelist"],
+    a[href*="/mangalist"],
+    a[href$="/DimitrovN/"]) {
     visibility: hidden;
     position: relative;
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
-.nav-wrap :is(
-a[href*="/animelist"],
-a[href*="/mangalist"],
-a[href$="/DimitrovN/"]
-)::after {
+
+.nav-wrap :is(a[href*="/animelist"],
+    a[href*="/mangalist"],
+    a[href$="/DimitrovN/"])::after {
     visibility: visible;
 }
-.nav-wrap :is(
-a[href*="/animelist"],
-a[href*="/mangalist"],
-a[href$="/DimitrovN/"]
-)::before {
+
+.nav-wrap :is(a[href*="/animelist"],
+    a[href*="/mangalist"],
+    a[href$="/DimitrovN/"])::before {
     text-align: center;
     display: inline-block;
     left: 0;
@@ -350,15 +369,19 @@ a[href$="/DimitrovN/"]
     visibility: visible;
     position: absolute;
 }
+
 .nav-wrap a[href*="/animelist"]::before {
     content: "anime";
 }
+
 .nav-wrap a[href*="/mangalist"]::before {
     content: "manga";
 }
+
 .nav-wrap a[href$="/DimitrovN/"]::before {
     content: "index";
 }
+
 .nav-wrap a {
     background: unset !important
 }
@@ -367,6 +390,7 @@ a[href$="/DimitrovN/"]
 div.desktop:nth-child(3) {
     display: none;
 }
+
 .nav-wrap a.link:nth-child(8) {
     display: none;
 }
@@ -381,20 +405,23 @@ div.desktop:nth-child(3) {
     border-radius: 10px;
     font-weight: 600;
 }
+
 .name-wrapper[data-v-1cc2919e]>.name[data-v-1cc2919e]::after {
-    content: "tired"!important;
-    display: block!important;
-    font-size: 1rem!important;
-    margin-top: 1px!important;
+    content: "tired" !important;
+    display: block !important;
+    font-size: 1rem !important;
+    margin-top: 1px !important;
     color: rgb(var(--theme-primary));
     text-transform: lowercase !important;
     font-weight: 600 !important;
     text-align: center !important;
 }
+
 .banner-content h1.name {
     filter: unset;
 }
-.name-wrapper > .name {
+
+.name-wrapper>.name {
     text-shadow: 0px 0px 6px black;
 }
 
@@ -403,13 +430,14 @@ div.desktop:nth-child(3) {
     animation-duration: unset !important;
     background-color: rgba(var(--theme-primary), 0.6) !important;
 }
+
 .follower-badge,
 .nav-btn {
     background-color: rgba(var(--theme-primary), 0.6) !important;
 }
 
 /* Hide specific buttons */
-.banner-content .actions > :not(.follower-badge, .nav-btn, .donator-badge) {
+.banner-content .actions> :not(.follower-badge, .nav-btn, .donator-badge) {
     display: none;
 }
 
@@ -418,20 +446,25 @@ div.desktop:nth-child(3) {
 .stats-wrap[data-v-815ccddc] {
     padding-bottom: 11.7px
 }
+
 .stats-wrap .footer {
     background: unset !important;
 }
+
 .stats-wrap .stat:first-child .value {
     font-size: 2rem;
 }
+
 .stats-wrap .stat:nth-child(2) .value {
     font-size: 2rem;
     color: rgb(var(--theme-primary));
 }
+
 .stats-wrap .stat:nth-child(3) .value {
     font-size: 2rem;
     color: rgb(var(--theme-primary));
 }
+
 .stats-wrap .stat:first-child .label,
 .stats-wrap .stat:nth-child(2) .label,
 .stats-wrap .stat:nth-child(3) .label {
@@ -445,23 +478,28 @@ div.desktop:nth-child(3) {
     grid-template-columns: 1fr 1fr;
     justify-items: stretch;
 }
-.stats-wrap > .list-stats > .stats-wrap {
+
+.stats-wrap>.list-stats>.stats-wrap {
     grid-auto-flow: inherit;
     align-items: center;
     row-gap: 1.2rem;
     grid-template-areas:
-    "a b"
-    "a c";
+        "a b"
+        "a c";
 }
+
 .stats-wrap .stat:nth-child(1) {
     grid-area: a;
 }
+
 .stats-wrap .stat:first-child .value {
     font-size: 5rem;
 }
+
 .stats-wrap .stat:nth-child(2) {
     grid-area: b;
 }
+
 .stats-wrap .stat:nth-child(3) {
     grid-area: c;
 }
@@ -475,10 +513,12 @@ div.desktop:nth-child(3) {
 .stat-cards {
     grid-template-columns: repeat(2, 1fr) !important;
 }
+
 .stat-cards.has-images {
     grid-template-columns: 1fr !important;
     max-width: 700px !important;
 }
+
 .highlights {
     display: grid !important;
     grid-gap: 40px 30px !important;
@@ -501,17 +541,19 @@ div.desktop:nth-child(3) {
     padding-bottom: 4px !important;
     padding-right: 0 !important;
 }
+
 .favourites.preview .favourites-wrap .favourite,
-.favourites.preview .favourites-wrap > div {
+.favourites.preview .favourites-wrap>div {
     margin-bottom: 12px !important;
     margin-right: 17px !important;
 }
+
 .favourites-wrap {
     background: rgba(1, 1, 0, 0.5) !important;
 }
 
 /* Favourites preview margin */
-.favourites.preview .favourites-wrap .favourite, 
+.favourites.preview .favourites-wrap .favourite,
 .favourites.preview .favourites-wrap>div {
     margin-bottom: 10px;
     margin-right: 10px;
@@ -522,25 +564,31 @@ a.favourite {
     margin-bottom: 32px !important;
     z-index: 5;
 }
+
 .favourites .favourites .favourite {
     margin-bottom: initial !important;
 }
+
 a.favourite:hover {
     z-index: 3;
 }
+
 .delete {
     z-index: 6 !important;
 }
+
 .favourite.studio {
     background: rgba(0, 0, 0, 0) !important;
     box-shadow: none !important;
 }
+
 .favourite {
     height: 104px;
     width: 77px;
     filter: brightness(40%);
     transition: filter 0.3s ease;
 }
+
 .favourite:hover {
     filter: brightness(100%);
 }
@@ -560,6 +608,7 @@ a.favourite::after {
     opacity: 0;
     transition: opacity ease-in-out 0.15s;
 }
+
 a.favourite:hover::after {
     opacity: 1;
     transition-delay: 0s;
@@ -569,6 +618,7 @@ a.favourite:hover::after {
 .favourites .favourites .section-header {
     visibility: hidden;
 }
+
 .favourites.preview .favourites-wrap:not(.favourites.preview .favourites-wrap.studios) {
     display: grid !important;
     grid-gap: 10px;
@@ -578,6 +628,7 @@ a.favourite:hover::after {
     margin-bottom: 35px !important;
     background: unset !important;
 }
+
 .favourites.preview .favourites-wrap a.favourite:not(.favourites.preview .favourites-wrap.studios a.favourite) {
     padding: 0 !important;
     margin: 0 !important;
@@ -585,69 +636,80 @@ a.favourite:hover::after {
     height: auto !important;
     min-height: 60px;
 }
+
 .favourites.preview .favourites-wrap.studios {
     background: unset !important;
 }
 
 /* Favourites section header renaming */
-.overview div.favourites:nth-child(3) > h2:nth-child(1), 
-.favourites .favourites:nth-child(1) .section-header, 
-.favourites .favourites:nth-child(2) .section-header, 
-.favourites .favourites:nth-child(3) .section-header, 
-.favourites .favourites:nth-child(4) .section-header, 
+.overview div.favourites:nth-child(3)>h2:nth-child(1),
+.favourites .favourites:nth-child(1) .section-header,
+.favourites .favourites:nth-child(2) .section-header,
+.favourites .favourites:nth-child(3) .section-header,
+.favourites .favourites:nth-child(4) .section-header,
 .favourites .favourites:nth-child(5) .section-header {
     position: relative !important;
     visibility: hidden !important;
 }
-.overview div.favourites:nth-child(4) > h2:nth-child(1) {
+
+.overview div.favourites:nth-child(4)>h2:nth-child(1) {
     position: relative;
     visibility: hidden;
 }
-.overview div.favourites:nth-child(4) > h2:nth-child(1)::after, 
+
+.overview div.favourites:nth-child(4)>h2:nth-child(1)::after,
 .favourites .favourites:nth-child(1) .section-header::after {
     content: "anime";
     position: absolute;
     visibility: visible;
     text-transform: lowercase;
 }
-.overview div.favourites:nth-child(5) > h2:nth-child(1) {
+
+.overview div.favourites:nth-child(5)>h2:nth-child(1) {
     position: relative;
     visibility: hidden;
 }
-.overview div.favourites:nth-child(5) > h2:nth-child(1)::after, 
+
+.overview div.favourites:nth-child(5)>h2:nth-child(1)::after,
 .favourites .favourites:nth-child(2) .section-header::after {
     content: "manga";
     position: absolute;
     visibility: visible;
     text-transform: lowercase;
 }
-.overview div.favourites:nth-child(6) > h2:nth-child(1) {
+
+.overview div.favourites:nth-child(6)>h2:nth-child(1) {
     position: relative;
     visibility: hidden;
 }
-.overview div.favourites:nth-child(6) > h2:nth-child(1)::after, 
+
+.overview div.favourites:nth-child(6)>h2:nth-child(1)::after,
 .favourites .favourites:nth-child(3) .section-header::after {
     content: "characters";
     position: absolute;
     visibility: visible;
     text-transform: lowercase;
 }
-.overview div.favourites:nth-child(7) > h2:nth-child(1) {
+
+.overview div.favourites:nth-child(7)>h2:nth-child(1) {
     position: relative;
     visibility: hidden;
 }
-.overview div.favourites:nth-child(7) > h2:nth-child(1)::after, 
+
+.overview div.favourites:nth-child(7)>h2:nth-child(1)::after,
 .favourites .favourites:nth-child(4) .section-header::after {
     content: "staff";
     position: absolute;
     visibility: visible;
     text-transform: lowercase;
 }
-.overview div.favourites:nth-child(8) > h2:nth-child(1) {
+
+.overview div.favourites:nth-child(8)>h2:nth-child(1) {
     position: relative;
     visibility: hidden;
 }
-.overview div.favourites:nth-child(8) > h2:nth-child(1)::after, 
+
+.overview div.favourites:nth-child(8)>h2:nth-child(1)::after,
 .favourites .favourites:nth-child(5) .section-header::after {
     content: "studios";
     position: absolute;
@@ -662,9 +724,11 @@ a.favourite:hover::after {
     width: 12px !important;
     height: 12px !important;
 }
+
 .activity-history[data-v-b79eb0f0] {
     grid-gap: 4px 4px;
 }
+
 .history-day:nth-of-type(-n + 21) {
     display: none;
 }
@@ -675,6 +739,7 @@ a.favourite:hover::after {
     grid-column-end: 3 !important;
     margin-bottom: 10px;
 }
+
 .load-more[data-v-6f203cf2] {
     margin-top: 0px;
 }
@@ -689,42 +754,49 @@ a.favourite:hover::after {
 }
 
 /* Activity styling */
-.container > .activity-entry .wrap,
-.container > .activity-entry .reply,
-.container > .activity-entry .markdown-editor,
-.container > .activity-entry .el-textarea__inner {
+.container>.activity-entry .wrap,
+.container>.activity-entry .reply,
+.container>.activity-entry .markdown-editor,
+.container>.activity-entry .el-textarea__inner {
     border-radius: 10px !important;
     background: rgba(10, 10, 10, 0.55) !important;
 }
+
 .activity-replies[data-v-2820a6bb] {
     margin: 10px;
 }
+
 .actions[data-v-c574a71c] {
     margin-bottom: 0px;
 }
 
 /* Comments */
-.activity-entry > .wrap > .actions > .action.replies svg {
+.activity-entry>.wrap>.actions>.action.replies svg {
     display: none;
 }
-.activity-entry > .wrap > .actions {
+
+.activity-entry>.wrap>.actions {
     display: flex;
 }
-.activity-entry > .wrap > .actions > .action.likes {
+
+.activity-entry>.wrap>.actions>.action.likes {
     display: inline-block;
     margin-top: 10px
 }
-.activity-entry > .wrap > .actions > .action.replies {
+
+.activity-entry>.wrap>.actions>.action.replies {
     display: inline-block;
     margin-top: 11px;
 }
-.activity-entry > .wrap > .actions > .action.replies .count {
+
+.activity-entry>.wrap>.actions>.action.replies .count {
     position: relative;
     bottom: 1px;
     margin-right: 1px;
     font-size: 13px;
 }
-.activity-entry > .wrap > .actions > .action.replies::after {
+
+.activity-entry>.wrap>.actions>.action.replies::after {
     display: inline-block;
     font-family: "bootstrap-icons";
     font-size: 10px;
@@ -747,7 +819,8 @@ a.favourite:hover::after {
 }
 
 /* Expanded list notes */
-.medialist .notes:before, .medialist .repeat:before {
+.medialist .notes:before,
+.medialist .repeat:before {
     width: max-content;
     max-width: 75%;
 }
@@ -759,9 +832,10 @@ a.favourite:hover::after {
 }
 
 /* Title styling */
-.title > :not(.notes) {
+.title> :not(.notes) {
     font-style: italic;
 }
+
 .medialist.table.compact .entry .title::before {
     color: rgb(var(--theme-primary));
     opacity: 0.6;
@@ -783,29 +857,34 @@ a.favourite:hover::after {
     filter: brightness(80%);
     transition: filter 0.3s ease;
 }
+
 .cover[data-v-04d66030]:hover {
     filter: brightness(100%);
 }
 
 /*------------------------ USER TITLES STYLING ------------------------*/
 /* User name/avatar styling */
-.name[data-v-04d66030] { /* Main post name */
+.name[data-v-04d66030] {
+    /* Main post name */
     font-size: 1.7rem;
 }
 
-.name[data-v-732ef224] { /* Reply name */
+.name[data-v-732ef224] {
+    /* Reply name */
     font-size: 1.5rem;
     margin-left: 12px;
     line-height: 10px;
     font-weight: 600;
 }
 
-.text .avatar[data-v-04d66030] { /* Main post avatar */
+.text .avatar[data-v-04d66030] {
+    /* Main post avatar */
     height: 50px;
     width: 50px;
 }
 
-.avatar[data-v-732ef224] { /* Reply avatar */
+.avatar[data-v-732ef224] {
+    /* Reply avatar */
     height: 40px;
     width: 40px;
 }
@@ -813,10 +892,10 @@ a.favourite:hover::after {
 /* Title for main user */
 a[href="/user/DimitrovN/"].name:after,
 a[href="/user/DimitrovNo2/"].name:after {
-    content: "♥ Main Character"!important;
-    display: block!important;
-    font-size: 1.3rem!important;
-    color: rgb(185, 110, 110)!important;
+    content: "♥ Main Character" !important;
+    display: block !important;
+    font-size: 1.3rem !important;
+    color: rgb(185, 110, 110) !important;
     text-transform: lowercase !important;
     font-weight: 600 !important;
 }
@@ -873,11 +952,11 @@ a[href="/user/voidnyan/"].name:after,
 a[href="/user/wswsasd/"].name:after,
 a[href="/user/xKazehaya/"].name:after,
 a[href="/user/zDenny/"].name:after {
-    content: "♦ Side Character"!important;
-    display: block!important;
-    font-size: 1.3rem!important;
-    margin-top: 6px!important;
-    color: rgb(182, 126, 177)!important;
+    content: "♦ Side Character" !important;
+    display: block !important;
+    font-size: 1.3rem !important;
+    margin-top: 6px !important;
+    color: rgb(182, 126, 177) !important;
     text-transform: lowercase !important;
     font-weight: 600 !important;
 }
@@ -886,22 +965,22 @@ a[href="/user/zDenny/"].name:after {
 .name[data-v-04d66030]::after,
 .name[data-v-732ef224]::after,
 .name::after {
-    content: "♠ NPC"!important;
-    display: block!important;
-    font-size: 1.3rem!important;
-    margin-top: 6px!important;
-    color: rgba(255, 255, 255, 0.6)!important;
+    content: "♠ NPC" !important;
+    display: block !important;
+    font-size: 1.3rem !important;
+    margin-top: 6px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
     text-transform: lowercase !important;
     font-weight: 500 !important;
 }
 
 /* Apply standard margin for all comment names */
-.reply > .header > a.name:after {
-    margin-top: 5px!important;
-    font-size: 1.2rem!important;
+.reply>.header>a.name:after {
+    margin-top: 5px !important;
+    font-size: 1.2rem !important;
 }
 
-.reply > .header {
+.reply>.header {
     display: flex;
     align-items: center;
 }
@@ -914,16 +993,19 @@ a[href="/user/zDenny/"].name:after {
     width: 50px;
     border-radius: 0px !important;
 }
+
 .entry-dropdown[data-v-04d66030]:hover {
-    transform: scale(1)!important;
+    transform: scale(1) !important;
     transition: .1s;
     height: 24px !important;
 }
+
 .entry-dropdown .el-dropdown-link[data-v-04d66030] {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     height: 100%;
 }
+
 .svg-inline--fa.fa-w-10 {
     width: 0.625em;
     height: auto;
@@ -937,23 +1019,44 @@ a[href="/user/zDenny/"].name:after {
 .result-col {
     background: rgba(var(--bg-dropdown)) !important;
 }
+
 .el-dropdown-menu.el-popper.el-dropdown-menu--small .el-dropdown-menu__item:hover,
 .el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium .el-dropdown-menu__item:hover,
 .result:hover {
     background: rgba(70, 70, 70, 0.3) !important;
     transition: var(--transition-standard);
 }
-.el-select-dropdown, .el-dropdown-menu:not(h2 ul), .el-dropdown-menu__item:not(h2 li) {
+
+.el-select-dropdown,
+.el-dropdown-menu:not(h2 ul),
+.el-dropdown-menu__item:not(h2 li) {
     background: rgba(20, 20, 20) !important;
 }
+
 .el-select-dropdown__item.hover {
     background: rgba(40, 40, 40, 0.5) !important;
     transition: 0.2s ease-in-out;
 }
-.stats .x-axis, .pie-chart .pie-chart, .stats .stat-card .relations-wrap, .el-dropdown-menu.el-popper.el-dropdown-menu--small .el-dropdown-menu__item, .el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium .el-dropdown-menu__item, .el-textarea, .activity-feed .time, .container .time, .thread-card > .footer, .list-section .progress, div.filter-group, div.el-select.format.el-select--small, div.el-select__tags, input.el-select__input.is-small {
+
+.stats .x-axis,
+.pie-chart .pie-chart,
+.stats .stat-card .relations-wrap,
+.el-dropdown-menu.el-popper.el-dropdown-menu--small .el-dropdown-menu__item,
+.el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium .el-dropdown-menu__item,
+.el-textarea,
+.activity-feed .time,
+.container .time,
+.thread-card>.footer,
+.list-section .progress,
+div.filter-group,
+div.el-select.format.el-select--small,
+div.el-select__tags,
+input.el-select__input.is-small {
     background: unset !important;
 }
-.popper__arrow, .el-dropdown-menu__item--divided:before {
+
+.popper__arrow,
+.el-dropdown-menu__item--divided:before {
     display: none !important;
     content: none !important;
 }
@@ -963,13 +1066,16 @@ a[href="/user/zDenny/"].name:after {
     text-transform: lowercase;
     padding-right: 12px !important;
 }
+
 .tooltip .content:has(.circle) {
     display: block;
     text-transform: lowercase;
 }
+
 body:has(.content > .overview, .favourites .favourites) .tooltip .content {
     display: none;
 }
+
 body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.circle) {
     display: block;
     text-transform: lowercase;
@@ -983,13 +1089,16 @@ body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.c
 .pinned {
     display: none !important;
 }
+
 .footer .links {
     margin-left: auto;
     transform: unset;
 }
+
 .banner .shadow {
     display: block;
 }
+
 .hohButton {
     background: rgb(var(--theme-primary)) !important;
 }
@@ -1000,7 +1109,7 @@ body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.c
 }
 
 /* Hide footer */
-#app > div > .footer {
+#app>div>.footer {
     display: none;
 }
 
@@ -1008,12 +1117,13 @@ body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.c
 .overview[data-v-5c30286e] {
     grid-template-columns: calc(45% - 40px) 55% !important;
 }
-.overview .favourites > .favourites-wrap {
+
+.overview .favourites>.favourites-wrap {
     width: auto;
 }
 
 /* User about section scrollbar */
-.user .about > div.content-wrap {
+.user .about>div.content-wrap {
     scrollbar-width: none;
 }
 
@@ -1070,7 +1180,7 @@ body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.c
 .markdown-spoiler::before,
 .markdown-spoiler.spoiler-visible span,
 .embed,
-.container > .activity-entry blockquote,
+.container>.activity-entry blockquote,
 .input,
 .stats-wrap .progress,
 .hohActive,
@@ -1083,43 +1193,196 @@ body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.c
     width: 6px;
     height: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
-    background: rgba(var(--text-secondary),.5);
+    background: rgba(var(--text-secondary), .5);
     border-radius: var(--hokaze-br);
 }
-::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active {
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
     background: rgb(var(--theme-primary));
 }
+
 body::-webkit-scrollbar-track {
     background: rgb(var(--color-background));
 }
+
 ::-webkit-scrollbar-corner {
     background: transparent;
 }
 
 /*------------------------ CURSOR STYLING ------------------------*/
 /* (pack by: https://www.deviantart.com/jepricreations @ https://www.deviantart.com/jepricreations/art/Material-Design-Cursor-Concept-HDPi-1135335222) */
-body { /* Default Pointer */
-  cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/arrow.cur'), auto !important;
+body {
+    /* Default Pointer */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/arrow.cur'), auto !important;
 }
 
-a, button { /* Links, buttons, clickables. */
-  cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;
+a,
+button {
+    /* Links, buttons, clickables. */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;
 }
 
-input[type="text"], textarea { /* Text input fields */
-  cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/ibeam.cur'), text !important;
+input[type="text"],
+textarea {
+    /* Text input fields */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/ibeam.cur'), text !important;
 }
 
-.moveable { /* Moveable elements */
-  cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizeall.cur'), move !important;
+.moveable {
+    /* Moveable elements */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizeall.cur'), move !important;
 }
 
 /* Extra clickable selectors */
-.button[data-v-5fb0ec91], .action.has-label, .time .action[data-v-04d66030], .actions .time .action[data-v-732ef224], .markdown-editor *, .header > .name[data-v-732ef224]:after, .button[data-v-c574a71c], .actions .action[data-v-04d66030], #nav .wrap .search, .search[data-v-62eacfff] svg, .user[data-v-62eacfff], .unfollow[data-v-39573fe2], .edit, .entry-dropdown .el-dropdown-link[data-v-04d66030], .el-checkbox, .el-input-number__decrease, .el-input-number__increase, .el-dropdown-menu__item, .load-more[data-v-6f203cf2], .el-date-editor .el-icon-circle-close, .el-select .el-input .el-select__caret, .el-select-dropdown__item, .favourite[data-v-0228dea0], .list-editor-wrap .header .save-btn, .list-editor-wrap .list-editor .body .delete-btn, .theme-switch .icon[data-v-0567dd85], .el-slider__runway, .random-btn[data-v-c5b3c852], .el-scrollbar__thumb, .el-icon-circle-close[data-v-c5b3c852], span { 
-  cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;    
+.button[data-v-5fb0ec91],
+.action.has-label,
+.time .action[data-v-04d66030],
+.actions .time .action[data-v-732ef224],
+.markdown-editor *,
+.header>.name[data-v-732ef224]:after,
+.button[data-v-c574a71c],
+.actions .action[data-v-04d66030],
+#nav .wrap .search,
+.search[data-v-62eacfff] svg,
+.user[data-v-62eacfff],
+.unfollow[data-v-39573fe2],
+.edit,
+.entry-dropdown .el-dropdown-link[data-v-04d66030],
+.el-checkbox,
+.el-input-number__decrease,
+.el-input-number__increase,
+.el-dropdown-menu__item,
+.load-more[data-v-6f203cf2],
+.el-date-editor .el-icon-circle-close,
+.el-select .el-input .el-select__caret,
+.el-select-dropdown__item,
+.favourite[data-v-0228dea0],
+.list-editor-wrap .header .save-btn,
+.list-editor-wrap .list-editor .body .delete-btn,
+.theme-switch .icon[data-v-0567dd85],
+.el-slider__runway,
+.random-btn[data-v-c5b3c852],
+.el-scrollbar__thumb,
+.el-icon-circle-close[data-v-c5b3c852],
+span {
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;
 }
 
-.el-slider__button, .el-slider__button-wrapper { /* sideway slider button */
-  cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizewe.cur'), move !important;
+.el-slider__button,
+.el-slider__button-wrapper {
+    /* sideway slider button */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizewe.cur'), move !important;
+}
+
+/*------------------------ SPOTIFY WIDGET ------------------------*/
+.content.container>div>div:nth-child(1)>div:nth-child(3)>h2:before {
+    content: "Spotify Status" !important;
+    font-size: 1.4rem;
+    font-family: Overpass, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: 700;
+}
+
+.content.container>div>div:nth-child(1)>div:nth-child(3)>h2 {
+    position: relative;
+}
+
+.content.container>div>div:nth-child(1)>div:nth-child(3)>h2:hover::after {
+    content: "Sorry to disappoint you... but this isn't my live listening activity, to show that, I'd have to dox myself... It is, however, a live loop through my seasonal playlist! (click the logo to see it!)";
+    position: absolute;
+    top: 33px;
+    left: 214px;
+    transform: translateX(-50%);
+    background: rgba(var(--bg-overlay), 0.9);
+    color: rgb(var(--text-primary));
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 1.7rem;
+    z-index: 10;
+    width: 416px;
+    height: 112px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.content.container>div>div:nth-child(1)>div:nth-child(3)>h2 {
+    font-size: 0;
+}
+
+.genres .amount,
+.percentage-bar,
+.name[data-v-63cd3b41],
+.genres>div:nth-child(2),
+.genres>div:nth-child(3),
+.genres>div:nth-child(4),
+.genres>div:nth-child(5) {
+    display: none !important;
+}
+
+.genres>div:nth-child(1)>div.name {
+    padding: 0 !important;
+    height: 0 !important;
+    font-size: 0 !important;
+}
+
+.genres>div:nth-child(1):before {
+    content: '';
+    display: inline-block;
+    z-index: 20;
+    transform: scale(1.3);
+    padding-top: 1px;
+    background: transparent;
+    width: 328px;
+    height: 90px;
+    margin-top: 13px;
+    border-radius: 15px;
+}
+
+.genres>div:nth-child(1):after {
+    content: var(--spotfy-url-profile);
+    display: inline-block;
+    position: absolute;
+    background: transparent;
+    transform: translate(-325px, 12px) scale(1.3);
+    z-index: 3;
+}
+
+.genres[data-v-63cd3b41] {
+    border-radius: 15px !important;
+    padding: 10px !important;
+}
+
+.overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]>a::after {
+    content: '\f1bc';
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 2.5rem;
+    color: rgb(var(--color-blue));
+    font-weight: normal;
+    transform: translate(370px, 297px);
+    z-index: 4;
+}
+
+@media (max-width: 1040px) {
+
+    .overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]::before,
+    .overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]>a::after {
+        display: none !important;
+    }
+
+    .genres>div:nth-child(1):after {
+        transform: translate(-340px, -5px) scale(0.95);
+    }
+
+    .genres>div:nth-child(1):before {
+        height: 55px;
+    }
+}
+
+div.desktop:nth-child(3) {
+    display: block !important;
 }

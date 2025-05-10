@@ -8,13 +8,13 @@ Modified by: @DimitrovN
 */
 
 /*------------------------ IMPORTS ------------------------*/
-@import url("https://voidnyan.github.io/anilist-css/css/social.css");
+@import url('https://voidnyan.github.io/anilist-css/css/social.css');
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url("https://anzuftnw.github.io/files/simple-theme-framework.css");
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://anzuftnw.github.io/files/simple-theme-framework.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-@import url(https://cdn.jsdelivr.net/gh/pseudo-AL/profile-CSS@main/imports/border-radius-styling-1.0.6.css);
+@import url('https://cdn.jsdelivr.net/gh/pseudo-AL/profile-CSS@main/imports/border-radius-styling-1.0.6.css');
 
 /*------------------------ GLOBAL VARIABLES ------------------------*/
 :root {
@@ -75,7 +75,8 @@ Modified by: @DimitrovN
     --font-primary: "Mulish", sans-serif;
 
     /* Spotify Widget */
-    --spotfy-url-profile: url(https://spotify-uid-mask.vercel.app/api/spotify);
+    --spotfy-url-profile: url('https://spotify-uid-mask.vercel.app/api/spotify');
+    --spotify-hover-gif: url('https://files.catbox.moe/hrk893.gif');
 }
 
 /*------------------------ THEME OVERRIDES ------------------------*/
@@ -117,7 +118,7 @@ body,
 /* Profile background */
 body {
     background-color: black;
-    background-image: url("https://i.imgur.com/22SbkcW.png");
+    background-image: url('https://i.imgur.com/22SbkcW.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -411,7 +412,7 @@ div.desktop:nth-child(3) {
     display: block !important;
     font-size: 1rem !important;
     margin-top: 1px !important;
-    color: rgb(var(--theme-primary));
+    color: rgb(var(--theme-primary)) !important;
     text-transform: lowercase !important;
     font-weight: 600 !important;
     text-align: center !important;
@@ -890,8 +891,8 @@ a.favourite:hover::after {
 }
 
 /* Title for main user */
-a[href="/user/DimitrovN/"].name:after,
-a[href="/user/DimitrovNo2/"].name:after {
+.header > a[href="/user/DimitrovN/"].name:after,
+.header > a[href="/user/DimitrovNo2/"].name:after {
     content: "♥ Main Character" !important;
     display: block !important;
     font-size: 1.3rem !important;
@@ -901,57 +902,57 @@ a[href="/user/DimitrovNo2/"].name:after {
 }
 
 /* Title for friends */
-a[href="/user/0Vi/"].name:after,
-a[href="/user/ACasualViewer/"].name:after,
-a[href="/user/aerglow/"].name:after,
-a[href="/user/anonymity/"].name:after,
-a[href="/user/Biswa29/"].name:after,
-a[href="/user/BtwIsSanti/"].name:after,
-a[href="/user/ChxrryLeaves/"].name:after,
-a[href="/user/CukieMunster/"].name:after,
-a[href="/user/D4an/"].name:after,
-a[href="/user/Danger11/"].name:after,
-a[href="/user/Elfiee/"].name:after,
-a[href="/user/Envertzz/"].name:after,
-a[href="/user/etekusat/"].name:after,
-a[href="/user/ethanrrs/"].name:after,
-a[href="/user/fujoshii/"].name:after,
-a[href="/user/HaraNiki/"].name:after,
-a[href="/user/hinaboe/"].name:after,
-a[href="/user/HungTee/"].name:after,
-a[href="/user/JoreruM/"].name:after,
-a[href="/user/Kaguyachinchin/"].name:after,
-a[href="/user/Kansugi/"].name:after,
-a[href="/user/Kenruneko/"].name:after,
-a[href="/user/Kryuell/"].name:after,
-a[href="/user/Kusogaki/"].name:after,
-a[href="/user/LikeAFerro/"].name:after,
-a[href="/user/Luzius/"].name:after,
-a[href="/user/Mcsuper/"].name:after,
-a[href="/user/Miraka/"].name:after,
-a[href="/user/Mob1000/"].name:after,
-a[href="/user/MrCreepyAvss/"].name:after,
-a[href="/user/NeilNatsumi/"].name:after,
-a[href="/user/nozomemee/"].name:after,
-a[href="/user/Okabekiyouma/"].name:after,
-a[href="/user/prtrncyon/"].name:after,
-a[href="/user/pseudo/"].name:after,
-a[href="/user/RecoveryBoy/"].name:after,
-a[href="/user/RecoveryGirl/"].name:after,
-a[href="/user/Reloading/"].name:after,
-a[href="/user/SamtheAniman/"].name:after,
-a[href="/user/sekuji/"].name:after,
-a[href="/user/SheyCroix/"].name:after,
-a[href="/user/svqilxy/"].name:after,
-a[href="/user/TheBrigade/"].name:after,
-a[href="/user/Thekingmcking/"].name:after,
-a[href="/user/Tniefi/"].name:after,
-a[href="/user/Tringapore/"].name:after,
-a[href="/user/TwoBeers/"].name:after,
-a[href="/user/voidnyan/"].name:after,
-a[href="/user/wswsasd/"].name:after,
-a[href="/user/xKazehaya/"].name:after,
-a[href="/user/zDenny/"].name:after {
+.header > a[href="/user/0Vi/"].name:after,
+.header > a[href="/user/ACasualViewer/"].name:after,
+.header > a[href="/user/aerglow/"].name:after,
+.header > a[href="/user/anonymity/"].name:after,
+.header > a[href="/user/Biswa29/"].name:after,
+.header > a[href="/user/BtwIsSanti/"].name:after,
+.header > a[href="/user/ChxrryLeaves/"].name:after,
+.header > a[href="/user/CukieMunster/"].name:after,
+.header > a[href="/user/D4an/"].name:after,
+.header > a[href="/user/Danger11/"].name:after,
+.header > a[href="/user/Elfiee/"].name:after,
+.header > a[href="/user/Envertzz/"].name:after,
+.header > a[href="/user/etekusat/"].name:after,
+.header > a[href="/user/ethanrrs/"].name:after,
+.header > a[href="/user/fujoshii/"].name:after,
+.header > a[href="/user/HaraNiki/"].name:after,
+.header > a[href="/user/hinaboe/"].name:after,
+.header > a[href="/user/HungTee/"].name:after,
+.header > a[href="/user/JoreruM/"].name:after,
+.header > a[href="/user/Kaguyachinchin/"].name:after,
+.header > a[href="/user/Kansugi/"].name:after,
+.header > a[href="/user/Kenruneko/"].name:after,
+.header > a[href="/user/Kryuell/"].name:after,
+.header > a[href="/user/Kusogaki/"].name:after,
+.header > a[href="/user/LikeAFerro/"].name:after,
+.header > a[href="/user/Luzius/"].name:after,
+.header > a[href="/user/Mcsuper/"].name:after,
+.header > a[href="/user/Miraka/"].name:after,
+.header > a[href="/user/Mob1000/"].name:after,
+.header > a[href="/user/MrCreepyAvss/"].name:after,
+.header > a[href="/user/NeilNatsumi/"].name:after,
+.header > a[href="/user/nozomemee/"].name:after,
+.header > a[href="/user/Okabekiyouma/"].name:after,
+.header > a[href="/user/prtrncyon/"].name:after,
+.header > a[href="/user/pseudo/"].name:after,
+.header > a[href="/user/RecoveryBoy/"].name:after,
+.header > a[href="/user/RecoveryGirl/"].name:after,
+.header > a[href="/user/Reloading/"].name:after,
+.header > a[href="/user/SamtheAniman/"].name:after,
+.header > a[href="/user/sekuji/"].name:after,
+.header > a[href="/user/SheyCroix/"].name:after,
+.header > a[href="/user/svqilxy/"].name:after,
+.header > a[href="/user/TheBrigade/"].name:after,
+.header > a[href="/user/Thekingmcking/"].name:after,
+.header > a[href="/user/Tniefi/"].name:after,
+.header > a[href="/user/Tringapore/"].name:after,
+.header > a[href="/user/TwoBeers/"].name:after,
+.header > a[href="/user/voidnyan/"].name:after,
+.header > a[href="/user/wswsasd/"].name:after,
+.header > a[href="/user/xKazehaya/"].name:after,
+.header > a[href="/user/zDenny/"].name:after {
     content: "♦ Side Character" !important;
     display: block !important;
     font-size: 1.3rem !important;
@@ -962,9 +963,9 @@ a[href="/user/zDenny/"].name:after {
 }
 
 /* Title for other users */
-.name[data-v-04d66030]::after,
-.name[data-v-732ef224]::after,
-.name::after {
+.header > .name[data-v-04d66030]::after,
+.header > .name[data-v-732ef224]::after,
+.header > .name::after {
     content: "♠ NPC" !important;
     display: block !important;
     font-size: 1.3rem !important;
@@ -1297,7 +1298,7 @@ span {
     top: 33px;
     left: 214px;
     transform: translateX(-50%);
-    background: url('https://files.catbox.moe/hrk893.gif') no-repeat center;
+    background: var(--spotify-hover-gif) no-repeat center;
     background-size: cover;
     padding: 0;
     border-radius: 7px;

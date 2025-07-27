@@ -1000,6 +1000,7 @@ a.favourite:hover::after {
 /* Entry dropdown */
 .list.small .entry-dropdown[data-v-04d66030] {
     background: rgba(20, 20, 20, 0.7);
+    color: rgb(var(--text-primary));
     height: 15px;
     width: 50px;
     border-radius: 0px !important;

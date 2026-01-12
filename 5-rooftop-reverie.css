@@ -880,7 +880,7 @@ a.favourite:hover::after {
     font-size: 1.7rem;
 }
 
-.name[data-v-732ef224] {
+.name[data-v-e1a59736] {
     /* Reply name */
     font-size: 1.5rem;
     margin-left: 12px;
@@ -894,7 +894,7 @@ a.favourite:hover::after {
     width: 50px;
 }
 
-.avatar[data-v-732ef224] {
+.avatar[data-v-e1a59736] {
     /* Reply avatar */
     height: 40px;
     width: 40px;
@@ -974,7 +974,7 @@ a.favourite:hover::after {
 
 /* Title for other users */
 .header > .name[data-v-61f9f9f6]::after,
-.header > .name[data-v-732ef224]::after,
+.header > .name[data-v-e1a59736]::after,
 .header > .name::after {
     content: "♠ NPC" !important;
     display: block !important;
@@ -994,6 +994,11 @@ a.favourite:hover::after {
 .reply>.header {
     display: flex;
     align-items: center;
+}
+
+/* Font Awesome like icon vertical align */
+.fa-sm {
+    vertical-align: -0.06em;
 }
 
 /*------------------------ DROPDOWN & ENTRY STYLING ------------------------*/
@@ -1256,9 +1261,9 @@ textarea {
 .button[data-v-5fb0ec91],
 .action.has-label,
 .time .action[data-v-61f9f9f6],
-.actions .time .action[data-v-732ef224],
+.actions .time .action[data-v-e1a59736],
 .markdown-editor *,
-.header>.name[data-v-732ef224]:after,
+.header>.name[data-v-e1a59736]:after,
 .button[data-v-c574a71c],
 .actions .action[data-v-61f9f9f6],
 #nav .wrap .search,

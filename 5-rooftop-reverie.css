@@ -911,6 +911,15 @@ a.favourite:hover::after {
     font-weight: 600 !important;
 }
 
+.header > a[href="/user/CukieMunster/"].name:after {
+    content: "♣ Koekiemonster" !important;
+    display: block !important;
+    font-size: 1.3rem !important;
+    color: rgb(110 160 185) !important;
+    text-transform: lowercase !important;
+    font-weight: 600 !important;
+}
+
 /* Title for friends */
 .header > a[href="/user/0Vi/"].name:after,
 .header > a[href="/user/ACasualViewer/"].name:after,
@@ -919,7 +928,6 @@ a.favourite:hover::after {
 .header > a[href="/user/Biswa29/"].name:after,
 .header > a[href="/user/BtwIsSanti/"].name:after,
 .header > a[href="/user/ChxrryLeaves/"].name:after,
-.header > a[href="/user/CukieMunster/"].name:after,
 .header > a[href="/user/D4an/"].name:after,
 .header > a[href="/user/Danger11/"].name:after,
 .header > a[href="/user/Elfiee/"].name:after,

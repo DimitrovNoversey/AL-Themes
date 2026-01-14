@@ -19,14 +19,14 @@ Modified by: @DimitrovN
 /*------------------------ GLOBAL VARIABLES ------------------------*/
 :root {
     /* Theme Colors */
-    --theme-primary: 140, 160, 150;        /* lighter main surface */
-    --theme-primary-dim: 115, 135, 125;     /* slightly darker backdrop */
-    --theme-manga-color: 214, 93, 139;     /* unchanged */
+    --theme-primary: 150, 170, 160;
+    --theme-primary-dim: 115, 135, 125;
+    --theme-manga-color: 214, 93, 139;
     
     /* Text Colors */
-    --text-primary: 245, 254, 248;         /* crisp and readable */
-    --text-secondary: 200, 215, 205;       /* softer supporting text */
-    --text-tertiary: 160, 180, 170;        /* muted / metadata */
+    --text-primary: 245, 254, 248;
+    --text-secondary: 200, 215, 205;
+    --text-tertiary: 160, 180, 170;
 
     /* Background Colors */
     --bg-overlay: 20, 20, 20;

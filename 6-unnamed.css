@@ -1,0 +1,1417 @@
+/*------------------------ THEME: ROOFTOP REVERIE ------------------------*/
+
+/*
+--- Credits ---
+Base theme: @pseudo (@voidnyan ~85%, @Anzu ~10%)
+Additional components from @sekuji: Name styling, Activity History, Activity User Titles, Entry Dropdown, Spotify Widget
+Modified by: @DimitrovN
+*/
+
+/*------------------------ IMPORTS ------------------------*/
+@import url('https://voidnyan.github.io/anilist-css/css/social.css');
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://anzuftnw.github.io/files/simple-theme-framework.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url('https://cdn.jsdelivr.net/gh/pseudo-AL/profile-CSS@main/imports/border-radius-styling-1.0.6.css');
+
+/*------------------------ GLOBAL VARIABLES ------------------------*/
+:root {
+    /* Theme Colors */
+    --theme-primary: 204, 222, 233;
+    --theme-primary-dim: 214, 224, 243;
+    --theme-manga-color: 214, 93, 139;
+
+    /* Text Colors */
+    --text-primary: 240, 240, 240;
+    --text-secondary: 240, 240, 240;
+    --text-tertiary: 240, 240, 240;
+
+    /* Background Colors */
+    --bg-overlay: 20, 20, 20;
+    --bg-container: 20, 20, 20, 0.4;
+    --bg-element: 10, 10, 10, 0.5;
+    --bg-element-lighter: 10, 10, 10, 0.35;
+    --bg-nav: 10, 10, 10, 0.825;
+    --bg-dropdown: 20, 20, 20, 0.9;
+    --bg-pop-up: 197, 158, 113, 0.9;
+
+    /* Layout */
+    --border-radius: 10px;
+    --padding-v: 30px;
+    --padding-h: 30px;
+    --brt: var(--border-radius) var(--border-radius) 0 0;
+    --brb: 0 0 var(--border-radius) var(--border-radius);
+    --pdh: var(--padding-v) var(--padding-h);
+
+    /* Favorites Layout */
+    --height: 115px;
+    --width: 77.6px;
+    --gap: 10px;
+    --first-column: -20px;
+    --second-column: calc(var(--first-column) + var(--width) + var(--gap));
+    --third-column: calc(var(--second-column) + var(--width) + var(--gap));
+    --fourth-column: calc(var(--third-column) + var(--width) + var(--gap));
+    --fifth-column: calc(var(--fourth-column) + var(--width) + var(--gap));
+    --first-row: 374.1px;
+    --second-row: calc(var(--first-row) + var(--height) + var(--gap));
+    --third-row: calc(var(--second-row) + var(--height) + var(--gap));
+    --fourth-row: calc(var(--third-row) + var(--height) + var(--gap));
+    --fifth-row: calc(var(--fourth-row) + var(--height) + var(--gap));
+    --first-row-manga: calc(var(--fifth-row) + var(--height) + 61.3px);
+
+    /* Content Labels */
+    --write-up: "write-up";
+    --review: "review";
+    --series: "whole series";
+    --season: "season only";
+    --movie: "movie only";
+
+    /* Transitions */
+    --transition-standard: 0.2s ease-in-out;
+
+    /* Font Families */
+    --font-primary: "Mulish", sans-serif;
+
+    /* Spotify Widget */
+    --spotfy-url-profile: url('https://spotify-uid-mask.vercel.app/api/spotify');
+    --spotify-hover-gif: url('https://files.catbox.moe/hrk893.gif');
+}
+
+/*------------------------ THEME OVERRIDES ------------------------*/
+/* Apply theme colors to AniList variables */
+body,
+.site-theme-dark,
+.site-theme-contrast,
+.user-page-unscoped.green,
+.user-page-unscoped.pink,
+.user-page-unscoped.orange,
+:root {
+    --color-blue: var(--theme-primary) !important;
+    --color-blue-dim: var(--theme-primary-dim) !important;
+    --color-text: var(--text-primary);
+    --color-text-light: var(--text-secondary);
+    --color-text-lighter: var(--text-tertiary);
+    --color-text-bright: 46, 58, 70;
+    --color-foreground-grey-dark: 10, 10, 10, 0.6 !important;
+    --color-nav-transparent-background: 20, 20, 20, 0.675;
+    --color-nav-text-hover: 255, 255, 255;
+    --color-nav-transparent-text: 255, 255, 255;
+    --color-shadow-blue: 40, 40, 40;
+    --color-background-100: 20, 20, 20, 0.95;
+    --color-background-200: 20, 20, 20, 0.4;
+    --color-gray-100: 20, 20, 20, 0.95;
+    --color-gray-600: 255, 255, 255;
+    --color-gray-700: 255, 255, 255;
+    --color-gray-800: 200, 200, 200;
+    --color-gray-900: 200, 200, 200;
+}
+
+/* Manga color for automail */
+.activity-manga_list>div>div>div>div>.title,
+.hohPinned .list .title[href^="/manga/"] {
+    --color-green: var(--theme-manga-color) !important;
+}
+
+/*------------------------ BACKGROUND & MAIN LAYOUT ------------------------*/
+/* Profile background */
+body {
+    background-color: black;
+    background-image: url('https://i.imgur.com/VdgNzmU.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Profile avatar */
+.banner .avatar {
+    width: 0 !important;
+    height: 0 !important;
+    padding: 190px 170px !important;
+    background: url('https://i.imgur.com/bdddlM0.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.banner-content>.avatar {
+    max-width: 250px !important;
+    max-height: none !important;
+}
+
+/* Banner */
+.banner {
+    visibility: hidden;
+}
+
+.banner>.container {
+    visibility: visible;
+    justify-content: center;
+}
+
+.review-card>.banner {
+    visibility: visible;
+}
+
+.banner:not(.review-card > .banner) {
+    height: calc(100vh - 46px) !important;
+    background-position: 50% 50% !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    transition: height 0.8s ease-in-out;
+}
+
+/* Container layout */
+.container {
+    max-width: 1140px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+.header-wrap>.nav-wrap {
+    max-width: 1140px !important;
+    margin: 0 auto;
+    border-radius: var(--brt);
+    position: relative;
+}
+
+.content.container {
+    background: rgba(var(--bg-container)) !important;
+    padding: 1px;
+    border-radius: var(--brb);
+}
+
+.content.container:not(:has(.el-dialog__wrapper)) {
+    backdrop-filter: blur(3px);
+}
+
+/*------------------------ TYPOGRAPHY & FONTS ------------------------*/
+/* Apply primary font family */
+*.overview,
+.stats-wrap,
+.nav,
+.lists,
+.filters,
+.user-follow,
+.user-reviews,
+.filter-group,
+.el-input__inner,
+.el-textarea__inner,
+.el-scrollbar,
+.el-tooltip__popper,
+.tooltip .content,
+.user-follow>.name,
+.section-header,
+.banner-content,
+.option,
+.content>.user-social,
+.content .submissions,
+.el-dropdown-menu.el-popper.el-dropdown-menu--small,
+.el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium,
+.container>.activity-entry .wrap,
+.container>.activity-entry .reply,
+.el-dialog__body .title,
+.el-dialog__body .save-btn,
+.el-dialog__body .input-title,
+*.el-picker-panel.el-date-picker.el-popper,
+*.quick-search.visible,
+.primary-links,
+.footer,
+#nav.nav .links,
+*.el-message-box,
+.el-button.el-button--default.el-button--small,
+.el-button.el-button--default.el-button--small.el-button--primary,
+.delete-btn,
+*.checkbox-wrap,
+.hohButton,
+.activity-feed .time,
+* {
+    font-family: var(--font-primary);
+}
+
+/* Lowercase styling */
+.details,
+.stats-wrap,
+.nav,
+.action.has-label,
+.stats>.title,
+.filters,
+.section-header,
+.title> :not(.notes),
+.list-head>div,
+.score,
+.progress,
+.status,
+.format,
+.genres,
+.el-input__inner,
+.el-scrollbar,
+.heading.score,
+.switch,
+.favourites-wrap,
+.read-review,
+.content>.header,
+.follower-badge,
+.action.has-label.active,
+.nav-btn,
+.el-tooltip__popper,
+.pie-chart.vertical-layout>.title,
+.options>.option,
+.tooltip .content,
+.donator-badge:not(.donator-badge.rainbow),
+textarea::placeholder,
+.el-dropdown-menu.el-popper.el-dropdown-menu--small,
+.el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium,
+.el-dialog__body .title,
+.el-dialog__body .save-btn,
+.el-dialog__body .input-title,
+*.el-picker-panel.el-date-picker.el-popper,
+.quick-search input[placeholder="Search AniList"],
+.result-col>.title,
+.embed,
+.primary-links,
+.footer,
+.void-button.void-self-message,
+.void-toast,
+#nav.nav .links,
+*.el-message-box,
+.el-button.el-button--default.el-button--small,
+.el-button.el-button--default.el-button--small.el-button--primary,
+.delete-btn,
+*.checkbox-wrap,
+.stats .title,
+.filter-group span,
+.load-more,
+.hohButton,
+.submissions,
+.actions,
+.section-name {
+    text-transform: lowercase !important;
+}
+
+/* Text selection styling */
+*::selection {
+    background-color: rgba(var(--theme-primary), 0.8);
+    color: rgb(var(--text-primary));
+    text-shadow: 0 0 2px rgba(var(--bg-overlay), 0.3);
+}
+
+/*------------------------ NAVIGATION & HEADER ------------------------*/
+/* AniList logo recolor */
+.logo img {
+    content: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 361 273"><defs><style> .cls-1 { fill: %23fefefe; } .cls-1, .cls-2 { stroke-width: 0px; } .cls-2 { fill: %23ccdee9; } </style></defs><path class="cls-2" d="m246.92,203.27V16.6c0-10.7-5.89-16.6-16.56-16.6h-36.43c-10.67,0-16.56,5.9-16.56,16.6v88.65c0,2.5,24,14.09,24.62,16.54,18.28,71.61,3.97,128.92-13.36,131.6,28.34,1.4,31.45,15.06,10.35,5.73,3.23-38.21,15.83-38.13,52.05-1.41.31.32,7.43,15.28,7.87,15.28h85.54c10.67,0,16.56-5.9,16.56-16.6v-36.52c0-10.7-5.89-16.6-16.56-16.6h-97.52Z" /><path class="cls-1" d="m95.68,0L0,273h74.34l16.19-47.22h80.96l15.83,47.22h73.97L165.97,0h-70.29Zm11.78,165.28l23.18-75.63,25.39,75.63h-48.58Z" /></svg>');
+    padding: 6px;
+}
+
+/* Navbar styling */
+.nav-wrap {
+    background: rgba(var(--bg-nav)) !important;
+    backdrop-filter: blur(2px);
+}
+
+#nav.nav {
+    background-color: rgba(20, 20, 20, 0.6) !important;
+    transition: all 0s ease 0s, top 0.5s ease 0s !important;
+    left: calc((100% - 1140px) / 2);
+    height: 55px;
+    width: 1140px;
+    border-radius: 0 0 10px 10px !important;
+}
+
+#nav.nav:not(:has(.quick-search.visible)) {
+    backdrop-filter: blur(2px);
+}
+
+/* Navbar link hover animations */
+.nav>.link {
+    position: relative;
+}
+
+.nav>.link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background: rgb(var(--theme-primary));
+    transition: var(--transition-standard);
+}
+
+.nav>.router-link-active::after {
+    left: 0;
+    width: 100%;
+    background: rgb(var(--theme-primary));
+}
+
+.nav>.link:hover::after {
+    left: 0;
+    width: 100%;
+    background: rgb(var(--theme-primary));
+    color: #3190c2;
+}
+
+/* Navbar link renaming */
+.nav-wrap :is(a[href*="/animelist"],
+    a[href*="/mangalist"],
+    a[href$="/DimitrovN/"]) {
+    visibility: hidden;
+    position: relative;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.nav-wrap :is(a[href*="/animelist"],
+    a[href*="/mangalist"],
+    a[href$="/DimitrovN/"])::after {
+    visibility: visible;
+}
+
+.nav-wrap :is(a[href*="/animelist"],
+    a[href*="/mangalist"],
+    a[href$="/DimitrovN/"])::before {
+    text-align: center;
+    display: inline-block;
+    left: 0;
+    width: 100%;
+    visibility: visible;
+    position: absolute;
+}
+
+.nav-wrap a[href*="/animelist"]::before {
+    content: "anime";
+}
+
+.nav-wrap a[href*="/mangalist"]::before {
+    content: "manga";
+}
+
+.nav-wrap a[href$="/DimitrovN/"]::before {
+    content: "index";
+}
+
+.nav-wrap a {
+    background: unset !important
+}
+
+/* Hide specific nav items */
+div.desktop:nth-child(3) {
+    display: none;
+}
+
+.nav-wrap a.link:nth-child(8) {
+    display: none;
+}
+
+/*------------------------ USER PROFILE STYLING ------------------------*/
+/* Name styling */
+.name[data-v-00c8d9df] {
+    color: rgb(var(--text-secondary));
+    font-size: 2.2rem;
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 6px 6px 7px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.name-wrapper[data-v-00c8d9df]>.name[data-v-00c8d9df]::after {
+    content: "tired" !important;
+    display: block !important;
+    font-size: 1rem !important;
+    margin-top: 1px !important;
+    color: rgb(var(--theme-primary)) !important;
+    text-transform: lowercase !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+}
+
+.banner-content h1.name {
+    filter: unset;
+}
+
+.name-wrapper>.name {
+    text-shadow: 0px 0px 6px black;
+}
+
+/* Donator/follow buttons transparency */
+.donator-badge:not(.donator-badge.rainbow) {
+    animation-duration: unset !important;
+    background-color: rgba(var(--theme-primary), 0.6) !important;
+}
+
+.follower-badge,
+.nav-btn {
+    background-color: rgba(var(--theme-primary), 0.6) !important;
+}
+
+/* Hide specific buttons */
+.banner-content .actions> :not(.follower-badge, .nav-btn, .donator-badge) {
+    display: none;
+}
+
+/*------------------------ STATS SECTION ------------------------*/
+/* Stats layout */
+.stats-wrap[data-v-815ccddc] {
+    padding-bottom: 11.7px
+}
+
+.stats-wrap .footer {
+    background: unset !important;
+}
+
+.stats-wrap .stat:first-child .value {
+    font-size: 2rem;
+}
+
+.stats-wrap .stat:nth-child(2) .value {
+    font-size: 2rem;
+    color: rgb(var(--theme-primary));
+}
+
+.stats-wrap .stat:nth-child(3) .value {
+    font-size: 2rem;
+    color: rgb(var(--theme-primary));
+}
+
+.stats-wrap .stat:first-child .label,
+.stats-wrap .stat:nth-child(2) .label,
+.stats-wrap .stat:nth-child(3) .label {
+    font-size: 1.1rem;
+}
+
+/* Overview stat layout */
+.stats-wrap[data-v-5c30286e] {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+}
+
+.stats-wrap>.list-stats>.stats-wrap {
+    grid-auto-flow: inherit;
+    align-items: center;
+    row-gap: 1.2rem;
+    grid-template-areas:
+        "a b"
+        "a c";
+}
+
+.stats-wrap .stat:nth-child(1) {
+    grid-area: a;
+}
+
+.stats-wrap .stat:first-child .value {
+    font-size: 5rem;
+}
+
+.stats-wrap .stat:nth-child(2) {
+    grid-area: b;
+}
+
+.stats-wrap .stat:nth-child(3) {
+    grid-area: c;
+}
+
+/* Progress bar */
+.user.user-page-unscoped .progress .bar:after {
+    background: rgba(var(--theme-primary));
+}
+
+/* Stat cards layout */
+.stat-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.stat-cards.has-images {
+    grid-template-columns: 1fr !important;
+    max-width: 700px !important;
+}
+
+.highlights {
+    display: grid !important;
+    grid-gap: 40px 30px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    margin-left: 5% !important;
+    width: 90% !important;
+}
+
+/*------------------------ FAVOURITES SECTION ------------------------*/
+/* Favourites section title styling */
+.overview .section:first-child .section-header,
+.overview .section-header {
+    text-transform: lowercase;
+    font-weight: 700;
+}
+
+/* Favourites grid layout */
+.favourites.preview .favourites-wrap {
+    padding: 17px !important;
+    padding-bottom: 4px !important;
+    padding-right: 0 !important;
+}
+
+.favourites.preview .favourites-wrap .favourite,
+.favourites.preview .favourites-wrap>div {
+    margin-bottom: 12px !important;
+    margin-right: 17px !important;
+}
+
+.favourites-wrap {
+    background: rgba(1, 1, 0, 0.5) !important;
+}
+
+/* Favourites preview margin */
+.favourites.preview .favourites-wrap .favourite,
+.favourites.preview .favourites-wrap>div {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+/* Favourite item styling */
+a.favourite {
+    margin-bottom: 32px !important;
+    z-index: 5;
+}
+
+.favourites .favourites .favourite {
+    margin-bottom: initial !important;
+}
+
+a.favourite:hover {
+    z-index: 3;
+}
+
+.delete {
+    z-index: 6 !important;
+}
+
+.favourite.studio {
+    background: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+}
+
+.favourite {
+    height: 104px;
+    width: 77px;
+    filter: brightness(40%);
+    transition: filter 0.3s ease;
+}
+
+.favourite:hover {
+    filter: brightness(100%);
+}
+
+/* Favourite item hover effects */
+a.favourite::after {
+    font-size: 11px;
+    position: absolute;
+    top: 0px;
+    border-radius: 4px 4px 0px 0px;
+    text-align: center;
+    width: 100%;
+    background: rgba(var(--bg-overlay), 0.65);
+    padding: 4px;
+    color: white;
+    user-select: all;
+    opacity: 0;
+    transition: opacity ease-in-out 0.15s;
+}
+
+a.favourite:hover::after {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+/* Favourites layout grid */
+.favourites .favourites .section-header {
+    visibility: hidden;
+}
+
+.favourites.preview .favourites-wrap:not(.favourites.preview .favourites-wrap.studios) {
+    display: grid !important;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(115px, auto);
+    padding: 0 !important;
+    margin-bottom: 35px !important;
+    background: unset !important;
+}
+
+.favourites.preview .favourites-wrap a.favourite:not(.favourites.preview .favourites-wrap.studios a.favourite) {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 60px;
+}
+
+.favourites.preview .favourites-wrap.studios {
+    background: unset !important;
+}
+
+/* Favourites section header renaming */
+.overview div.favourites:nth-child(3)>h2:nth-child(1),
+.favourites .favourites:nth-child(1) .section-header,
+.favourites .favourites:nth-child(2) .section-header,
+.favourites .favourites:nth-child(3) .section-header,
+.favourites .favourites:nth-child(4) .section-header,
+.favourites .favourites:nth-child(5) .section-header {
+    position: relative !important;
+    visibility: hidden !important;
+}
+
+.overview div.favourites:nth-child(4)>h2:nth-child(1) {
+    position: relative;
+    visibility: hidden;
+}
+
+.overview div.favourites:nth-child(4)>h2:nth-child(1)::after,
+.favourites .favourites:nth-child(1) .section-header::after {
+    content: "anime";
+    position: absolute;
+    visibility: visible;
+    text-transform: lowercase;
+}
+
+.overview div.favourites:nth-child(5)>h2:nth-child(1) {
+    position: relative;
+    visibility: hidden;
+}
+
+.overview div.favourites:nth-child(5)>h2:nth-child(1)::after,
+.favourites .favourites:nth-child(2) .section-header::after {
+    content: "manga";
+    position: absolute;
+    visibility: visible;
+    text-transform: lowercase;
+}
+
+.overview div.favourites:nth-child(6)>h2:nth-child(1) {
+    position: relative;
+    visibility: hidden;
+}
+
+.overview div.favourites:nth-child(6)>h2:nth-child(1)::after,
+.favourites .favourites:nth-child(3) .section-header::after {
+    content: "characters";
+    position: absolute;
+    visibility: visible;
+    text-transform: lowercase;
+}
+
+.overview div.favourites:nth-child(7)>h2:nth-child(1) {
+    position: relative;
+    visibility: hidden;
+}
+
+.overview div.favourites:nth-child(7)>h2:nth-child(1)::after,
+.favourites .favourites:nth-child(4) .section-header::after {
+    content: "staff";
+    position: absolute;
+    visibility: visible;
+    text-transform: lowercase;
+}
+
+.overview div.favourites:nth-child(8)>h2:nth-child(1) {
+    position: relative;
+    visibility: hidden;
+}
+
+.overview div.favourites:nth-child(8)>h2:nth-child(1)::after,
+.favourites .favourites:nth-child(5) .section-header::after {
+    content: "studios";
+    position: absolute;
+    visibility: visible;
+    text-transform: lowercase;
+}
+
+/*------------------------ ACTIVITY FEED & HISTORY ------------------------*/
+/* Activity history */
+.history-day {
+    border-radius: 25px !important;
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.activity-history[data-v-b79eb0f0] {
+    grid-gap: 4px 4px;
+}
+
+.history-day:nth-of-type(-n + 21) {
+    display: none;
+}
+
+/* Activity entries */
+.activity-entry:has(.small) {
+    grid-column-start: 1 !important;
+    grid-column-end: 3 !important;
+    margin-bottom: 10px;
+}
+
+.load-more[data-v-6f203cf2] {
+    margin-top: 0px;
+}
+
+/* Activity user titles */
+.text .name[data-v-61f9f9f6] {
+    line-height: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+/* Activity styling */
+.container>.activity-entry .wrap,
+.container>.activity-entry .reply,
+.container>.activity-entry .markdown-editor,
+.container>.activity-entry .el-textarea__inner {
+    border-radius: 10px !important;
+    background: rgba(10, 10, 10, 0.55) !important;
+}
+
+.activity-replies[data-v-2820a6bb] {
+    margin: 10px;
+}
+
+.actions[data-v-c574a71c] {
+    margin-bottom: 0px;
+}
+
+/* Comments */
+.activity-entry>.wrap>.actions>.action.replies svg {
+    display: none;
+}
+
+.activity-entry>.wrap>.actions {
+    display: flex;
+}
+
+.activity-entry>.wrap>.actions>.action.likes {
+    display: inline-block;
+    margin-top: 10px
+}
+
+.activity-entry>.wrap>.actions>.action.replies {
+    display: inline-block;
+    margin-top: 11px;
+}
+
+.activity-entry>.wrap>.actions>.action.replies .count {
+    position: relative;
+    bottom: 1px;
+    margin-right: 1px;
+    font-size: 13px;
+}
+
+.activity-entry>.wrap>.actions>.action.replies::after {
+    display: inline-block;
+    font-family: "bootstrap-icons";
+    font-size: 10px;
+    content: "\F258";
+    margin-right: 4px;
+    margin-top: -10px;
+}
+
+/* Subscribed Button */
+.time .action.active[data-v-61f9f9f6] {
+    color: rgba(var(--color-blue));
+}
+
+/*------------------------ MEDIA LIST STYLING ------------------------*/
+/* List head styling */
+.list-head>div {
+    color: rgb(var(--theme-primary));
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Expanded list notes */
+.medialist .notes:before,
+.medialist .repeat:before {
+    width: max-content;
+    max-width: 75%;
+}
+
+/* List item hover effect */
+.medialist.table .entry:hover {
+    scale: 1.02;
+    border-radius: 5px;
+}
+
+/* Title styling */
+.title> :not(.notes) {
+    font-style: italic;
+}
+
+.medialist.table.compact .entry .title::before {
+    color: rgb(var(--theme-primary));
+    opacity: 0.6;
+}
+
+/* Release status */
+.medialist .release-status.RELEASING {
+    background: rgb(var(--theme-primary));
+    box-shadow: 0 0 5px rgb(var(--theme-primary));
+}
+
+/* Cards layout */
+.medialist.cards .list-section .list-entries {
+    grid-template-columns: repeat(auto-fill, 140px);
+}
+
+/* Cover brightness */
+.cover[data-v-61f9f9f6] {
+    filter: brightness(80%);
+    transition: filter 0.3s ease;
+}
+
+.cover[data-v-61f9f9f6]:hover {
+    filter: brightness(100%);
+}
+
+/*------------------------ USER TITLES STYLING ------------------------*/
+/* User name/avatar styling */
+.name[data-v-61f9f9f6] {
+    /* Main post name */
+    font-size: 1.7rem;
+}
+
+.name[data-v-e1a59736] {
+    /* Reply name */
+    font-size: 1.5rem;
+    margin-left: 12px;
+    line-height: 10px;
+    font-weight: 600;
+}
+
+.text .avatar[data-v-61f9f9f6] {
+    /* Main post avatar */
+    height: 50px;
+    width: 50px;
+}
+
+.avatar[data-v-e1a59736] {
+    /* Reply avatar */
+    height: 40px;
+    width: 40px;
+}
+
+/* Title for main user */
+.header > a[href="/user/DimitrovN/"].name:after,
+.header > a[href="/user/DimitrovNo2/"].name:after {
+    content: "♥ Main Character" !important;
+    display: block !important;
+    font-size: 1.3rem !important;
+    color: rgb(185, 110, 110) !important;
+    text-transform: lowercase !important;
+    font-weight: 600 !important;
+}
+
+.header > a[href="/user/CukieMunster/"].name:after {
+    content: "♣ Koekiemonster" !important;
+    display: block !important;
+    font-size: 1.3rem !important;
+    color: rgb(110 160 185) !important;
+    text-transform: lowercase !important;
+    font-weight: 600 !important;
+}
+
+/* Title for friends */
+.header > a[href="/user/0Vi/"].name:after,
+.header > a[href="/user/ACasualViewer/"].name:after,
+.header > a[href="/user/aerglow/"].name:after,
+.header > a[href="/user/anonymity/"].name:after,
+.header > a[href="/user/Biswa29/"].name:after,
+.header > a[href="/user/BtwIsSanti/"].name:after,
+.header > a[href="/user/ChxrryLeaves/"].name:after,
+.header > a[href="/user/D4an/"].name:after,
+.header > a[href="/user/Danger11/"].name:after,
+.header > a[href="/user/Elfiee/"].name:after,
+.header > a[href="/user/Envertzz/"].name:after,
+.header > a[href="/user/etekusat/"].name:after,
+.header > a[href="/user/ethanrrs/"].name:after,
+.header > a[href="/user/fujoshii/"].name:after,
+.header > a[href="/user/HaraNiki/"].name:after,
+.header > a[href="/user/hinaboe/"].name:after,
+.header > a[href="/user/HungTee/"].name:after,
+.header > a[href="/user/JoreruM/"].name:after,
+.header > a[href="/user/Kaguyachinchin/"].name:after,
+.header > a[href="/user/Kansugi/"].name:after,
+.header > a[href="/user/Kenruneko/"].name:after,
+.header > a[href="/user/Kryuell/"].name:after,
+.header > a[href="/user/Kusogaki/"].name:after,
+.header > a[href="/user/LikeAFerro/"].name:after,
+.header > a[href="/user/Luzius/"].name:after,
+.header > a[href="/user/Mcsuper/"].name:after,
+.header > a[href="/user/Miraka/"].name:after,
+.header > a[href="/user/Mob1000/"].name:after,
+.header > a[href="/user/MrCreepyAvss/"].name:after,
+.header > a[href="/user/NeilNatsumi/"].name:after,
+.header > a[href="/user/nozomemee/"].name:after,
+.header > a[href="/user/Okabekiyouma/"].name:after,
+.header > a[href="/user/prtrncyon/"].name:after,
+.header > a[href="/user/pseudo/"].name:after,
+.header > a[href="/user/RecoveryBoy/"].name:after,
+.header > a[href="/user/RecoveryGirl/"].name:after,
+.header > a[href="/user/Reloading/"].name:after,
+.header > a[href="/user/SamtheAniman/"].name:after,
+.header > a[href="/user/sekuji/"].name:after,
+.header > a[href="/user/SheyCroix/"].name:after,
+.header > a[href="/user/svqilxy/"].name:after,
+.header > a[href="/user/TheBrigade/"].name:after,
+.header > a[href="/user/Thekingmcking/"].name:after,
+.header > a[href="/user/Tniefi/"].name:after,
+.header > a[href="/user/Tringapore/"].name:after,
+.header > a[href="/user/TwoBeers/"].name:after,
+.header > a[href="/user/voidnyan/"].name:after,
+.header > a[href="/user/wswsasd/"].name:after,
+.header > a[href="/user/xKazehaya/"].name:after,
+.header > a[href="/user/zDenny/"].name:after {
+    content: "♦ Side Character" !important;
+    display: block !important;
+    font-size: 1.3rem !important;
+    margin-top: 6px !important;
+    color: rgb(182, 126, 177) !important;
+    text-transform: lowercase !important;
+    font-weight: 600 !important;
+}
+
+/* Title for other users */
+.header > .name[data-v-61f9f9f6]::after,
+.header > .name[data-v-e1a59736]::after,
+.header > .name::after {
+    content: "♠ NPC" !important;
+    display: block !important;
+    font-size: 1.3rem !important;
+    margin-top: 6px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-transform: lowercase !important;
+    font-weight: 500 !important;
+}
+
+/* Apply standard margin for all comment names */
+.reply>.header>a.name:after {
+    margin-top: 5px !important;
+    font-size: 1.2rem !important;
+}
+
+.reply>.header {
+    display: flex;
+    align-items: center;
+}
+
+/* Font Awesome like icon vertical align */
+.fa-sm {
+    vertical-align: -0.0em;
+}
+
+/*------------------------ DROPDOWN & ENTRY STYLING ------------------------*/
+/* Entry dropdown */
+.list.small .entry-dropdown[data-v-61f9f9f6] {
+    background: rgba(20, 20, 20, 0.7);
+    color: rgb(var(--text-primary));
+    height: 15px;
+    width: 50px;
+    border-radius: 0px !important;
+}
+
+.entry-dropdown[data-v-61f9f9f6]:hover {
+    transform: scale(1) !important;
+    transition: .1s;
+    height: 24px !important;
+}
+
+.entry-dropdown .el-dropdown-link[data-v-61f9f9f6] {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.svg-inline--fa.fa-w-10 {
+    width: 0.625em;
+    height: auto;
+    margin-bottom: 1px;
+    margin-top: -1px;
+}
+
+/* Dropdown styling */
+.el-dropdown-menu.el-popper.el-dropdown-menu--small,
+.el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium,
+.result-col {
+    background: rgba(var(--bg-dropdown)) !important;
+}
+
+.el-dropdown-menu.el-popper.el-dropdown-menu--small .el-dropdown-menu__item:hover,
+.el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium .el-dropdown-menu__item:hover,
+.result:hover {
+    background: rgba(70, 70, 70, 0.3) !important;
+    transition: var(--transition-standard);
+}
+
+.el-select-dropdown,
+.el-dropdown-menu:not(h2 ul),
+.el-dropdown-menu__item:not(h2 li) {
+    background: rgba(20, 20, 20) !important;
+}
+
+.el-select-dropdown__item.hover {
+    background: rgba(40, 40, 40, 0.5) !important;
+    transition: 0.2s ease-in-out;
+}
+
+.stats .x-axis,
+.pie-chart .pie-chart,
+.stats .stat-card .relations-wrap,
+.el-dropdown-menu.el-popper.el-dropdown-menu--small .el-dropdown-menu__item,
+.el-dropdown-menu.el-popper.activity-extras-dropdown.el-dropdown-menu--medium .el-dropdown-menu__item,
+.el-textarea,
+.activity-feed .time,
+.container .time,
+.thread-card>.footer,
+.list-section .progress,
+div.filter-group,
+div.el-select.format.el-select--small,
+div.el-select__tags,
+input.el-select__input.is-small {
+    background: unset !important;
+}
+
+.popper__arrow,
+.el-dropdown-menu__item--divided:before {
+    display: none !important;
+    content: none !important;
+}
+
+/* Tooltip styling */
+.tooltip .title {
+    text-transform: lowercase;
+    padding-right: 12px !important;
+}
+
+.tooltip .content:has(.circle) {
+    display: block;
+    text-transform: lowercase;
+}
+
+body:has(.content > .overview, .favourites .favourites) .tooltip .content {
+    display: none;
+}
+
+body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.circle) {
+    display: block;
+    text-transform: lowercase;
+}
+
+/*------------------------ MISCELLANEOUS ------------------------*/
+/* Profile standardization for automail */
+.hohDownload,
+.hohColourPicker,
+.hohDismiss,
+.pinned {
+    display: none !important;
+}
+
+.footer .links {
+    margin-left: auto;
+    transform: unset;
+}
+
+.banner .shadow {
+    display: block;
+}
+
+.hohButton {
+    background: rgb(var(--theme-primary)) !important;
+}
+
+/* Review card styling */
+.review-card .header {
+    font-weight: bold !important;
+}
+
+.review-wrap {
+    margin: 30px 0px 30px 0px;
+}
+
+/* Hide footer */
+#app>div>.footer {
+    display: none;
+}
+
+/* Overview layout adjustment */
+.overview[data-v-5c30286e] {
+    grid-template-columns: calc(45% - 40px) 55% !important;
+}
+
+.overview .favourites>.favourites-wrap {
+    width: auto;
+}
+
+/* User about section scrollbar */
+.user .about>div.content-wrap {
+    scrollbar-width: none;
+}
+
+/* Global scrollbar width */
+* {
+    scrollbar-width: none;
+}
+
+/* Hide specific genres */
+.genres .genre:last-child {
+    display: none !important;
+}
+
+/* Background transparency */
+.body,
+.activity-feed .details .hohScore {
+    background: rgba(var(--bg-overlay)) !important;
+}
+
+.markdown-editor,
+.el-textarea textarea,
+.list-section,
+.lists .theme-switch,
+.filter-group .active,
+.filters-wrap input,
+.el-slider__runway,
+.load-more,
+.favourites .favourites .favourites-wrap,
+.overview .favourites .favourites-wrap,
+.stats .circle,
+.stats .switch,
+.stats .bar-chart-wrap,
+.stats .pie-chart,
+.stats .line-chart-wrap,
+.filter-group .router-link-active,
+.ps-container.horizontal-scroller,
+.stats .stat-card,
+.hohTable,
+.hohTable .header,
+.hohThemeSwitch,
+.review-card,
+.el-input__inner,
+.genre-overview.content-wrap,
+.activity-history.content-wrap,
+.content-wrap,
+.footer,
+.activity-feed-wrap .wrap,
+.activity-feed-wrap .reply,
+.el-input,
+.comment-wrap.depth-0.even,
+.thread-card,
+.activity-feed-wrap blockquote,
+.comment blockquote,
+.markdown-spoiler::before,
+.markdown-spoiler.spoiler-visible span,
+.embed,
+.container>.activity-entry blockquote,
+.input,
+.stats-wrap .progress,
+.hohActive,
+.submissions-page .submission {
+    background: rgba(var(--bg-element)) !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(var(--text-secondary), .5);
+    border-radius: var(--hokaze-br);
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+    background: rgb(var(--theme-primary));
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(var(--color-background));
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/*------------------------ CURSOR STYLING ------------------------*/
+/* (pack by: https://www.deviantart.com/jepricreations @ https://www.deviantart.com/jepricreations/art/Material-Design-Cursor-Concept-HDPi-1135335222) */
+body {
+    /* Default Pointer */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/arrow.cur'), auto !important;
+}
+
+a,
+button {
+    /* Links, buttons, clickables. */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;
+}
+
+input[type="text"],
+textarea {
+    /* Text input fields */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/ibeam.cur'), text !important;
+}
+
+.moveable {
+    /* Moveable elements */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizeall.cur'), move !important;
+}
+
+/* Extra clickable selectors */
+.button[data-v-5fb0ec91],
+.action.has-label,
+.time .action[data-v-61f9f9f6],
+.actions .time .action[data-v-e1a59736],
+.markdown-editor *,
+.header>.name[data-v-e1a59736]:after,
+.button[data-v-c574a71c],
+.actions .action[data-v-61f9f9f6],
+#nav .wrap .search,
+.search[data-v-62eacfff] svg,
+.user[data-v-62eacfff],
+.unfollow[data-v-39573fe2],
+.edit,
+.entry-dropdown .el-dropdown-link[data-v-61f9f9f6],
+.el-checkbox,
+.el-input-number__decrease,
+.el-input-number__increase,
+.el-dropdown-menu__item,
+.load-more[data-v-6f203cf2],
+.el-date-editor .el-icon-circle-close,
+.el-select .el-input .el-select__caret,
+.el-select-dropdown__item,
+.favourite[data-v-0228dea0],
+.list-editor-wrap .header .save-btn,
+.list-editor-wrap .list-editor .body .delete-btn,
+.theme-switch .icon[data-v-0567dd85],
+.el-slider__runway,
+.random-btn[data-v-c5b3c852],
+.el-scrollbar__thumb,
+.el-icon-circle-close[data-v-c5b3c852],
+span {
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/hand.cur'), pointer !important;
+}
+
+.el-slider__button,
+.el-slider__button-wrapper {
+    /* sideway slider button */
+    cursor: url('https://cdn.jsdelivr.net/gh/DimitrovNoversey/AL-Themes@main/cursor/dark/sizewe.cur'), move !important;
+}
+
+/*------------------------ SPOTIFY WIDGET ------------------------*/
+.content.container>div>div:nth-child(1)>div:nth-child(3)>h2:before {
+    content: "Spotify Status" !important;
+    font-size: 1.4rem;
+    font-family: Overpass, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+}
+
+.content.container>div>div:nth-child(1)>div:nth-child(3)>h2 {
+    position: relative;
+}
+
+.content.container>div>div:nth-child(1)>div:nth-child(3)>h2:hover::after {
+    content: "";
+    position: absolute;
+    top: 33px;
+    left: 214px;
+    transform: translateX(-50%);
+    background: var(--spotify-hover-gif) no-repeat center;
+    background-size: cover;
+    padding: 0;
+    border-radius: 7px;
+    z-index: 10;
+    width: 416px;
+    height: 130px;
+    display: block;
+    filter: brightness(0.95);
+}
+
+.content.container>div>div:nth-child(1)>div:nth-child(3)>h2 {
+    font-size: 0;
+}
+
+.genres .amount,
+.percentage-bar,
+.name[data-v-63cd3b41],
+.genres>div:nth-child(2),
+.genres>div:nth-child(3),
+.genres>div:nth-child(4),
+.genres>div:nth-child(5) {
+    display: none !important;
+}
+
+.genres>div:nth-child(1)>div.name {
+    padding: 0 !important;
+    height: 0 !important;
+    font-size: 0 !important;
+}
+
+.genres>div:nth-child(1):before {
+    content: '';
+    display: inline-block;
+    z-index: 20;
+    transform: scale(1.3);
+    padding-top: 1px;
+    background: transparent;
+    width: 328px;
+    height: 107px;
+    margin-top: 13px;
+    border-radius: 15px;
+}
+
+.genres>div:nth-child(1):after {
+    content: var(--spotfy-url-profile);
+    display: inline-block;
+    position: absolute;
+    background: transparent;
+    transform: translate(-325px, 10px) scale(1.3);
+    z-index: 3;
+}
+
+.genres[data-v-63cd3b41] {
+    border-radius: 15px !important;
+    padding: 10px !important;
+}
+
+/* spotify logo */
+/* .overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]>a::after {
+    content: '\f1bc';
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 2.5rem;
+    color: rgb(var(--color-blue));
+    font-weight: normal;
+    transform: translate(370px, 297px);
+    z-index: 4;
+} */
+
+@media (max-width: 1040px) {
+
+    .overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]::before,
+    .overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]>a::after {
+        display: none !important;
+    }
+
+    .genres>div:nth-child(1):after {
+        transform: translate(-340px, -5px) scale(0.95);
+    }
+
+    .genres>div:nth-child(1):before {
+        height: 55px;
+    }
+}
+
+div.desktop:nth-child(3) {
+    display: block !important;
+}

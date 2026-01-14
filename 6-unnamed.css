@@ -19,15 +19,15 @@ Modified by: @DimitrovN
 /*------------------------ GLOBAL VARIABLES ------------------------*/
 :root {
     /* Theme Colors */
-    --theme-primary: 184, 196, 191;        /* main surface */
-    --theme-primary-dim: 142, 158, 152;    /* darker backdrop / borders */
+    --theme-primary: 140, 160, 150;        /* lighter main surface */
+    --theme-primary-dim: 115, 135, 125;     /* slightly darker backdrop */
     --theme-manga-color: 214, 93, 139;     /* unchanged */
     
     /* Text Colors */
-    --text-primary: 240, 246, 244;         /* readable, not glowing */
-    --text-secondary: 202, 214, 209;       /* supportive text */
-    --text-tertiary: 152, 172, 165;        /* low-emphasis / metadata */
-    
+    --text-primary: 245, 254, 248;         /* crisp and readable */
+    --text-secondary: 200, 215, 205;       /* softer supporting text */
+    --text-tertiary: 160, 180, 170;        /* muted / metadata */
+
     /* Background Colors */
     --bg-overlay: 20, 20, 20;
     --bg-container: 20, 20, 20, 0.4;
@@ -409,7 +409,7 @@ div.desktop:nth-child(3) {
 /*------------------------ USER PROFILE STYLING ------------------------*/
 /* Name styling */
 .name[data-v-00c8d9df] {
-    color: rgb(var(--theme-primary-dim));
+    color: rgb(var(--text-secondary));
     font-size: 2.2rem;
     background-color: rgba(20, 20, 20, 0.9);
     padding: 6px 6px 7px 6px;
@@ -731,7 +731,7 @@ a.favourite:hover::after {
 /*------------------------ ACTIVITY FEED & HISTORY ------------------------*/
 /* Activity history */
 .history-day {
-    border-radius: 6px !important;
+    border-radius: 25px !important;
     width: 12px !important;
     height: 12px !important;
 }

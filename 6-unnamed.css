@@ -19,15 +19,15 @@ Modified by: @DimitrovN
 /*------------------------ GLOBAL VARIABLES ------------------------*/
 :root {
     /* Theme Colors */
-    --theme-primary: 214, 224, 220;
-    --theme-primary-dim: 168, 182, 176;
-    --theme-manga-color: 214, 93, 139;
-
+    --theme-primary: 184, 196, 191;        /* main surface */
+    --theme-primary-dim: 142, 158, 152;    /* darker backdrop / borders */
+    --theme-manga-color: 214, 93, 139;     /* unchanged */
+    
     /* Text Colors */
-    --text-primary: 246, 254, 251;
-    --text-secondary: 168, 182, 176;
-    --text-tertiary: 140, 166, 158;
-
+    --text-primary: 240, 246, 244;         /* readable, not glowing */
+    --text-secondary: 202, 214, 209;       /* supportive text */
+    --text-tertiary: 152, 172, 165;        /* low-emphasis / metadata */
+    
     /* Background Colors */
     --bg-overlay: 20, 20, 20;
     --bg-container: 20, 20, 20, 0.4;
@@ -302,7 +302,7 @@ textarea::placeholder,
 /*------------------------ NAVIGATION & HEADER ------------------------*/
 /* AniList logo recolor */
 .logo img {
-    content: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 361 273"><defs><style> .cls-1 { fill: %23fefefe; } .cls-1, .cls-2 { stroke-width: 0px; } .cls-2 { fill: %23d6e0dc; } </style></defs><path class="cls-2" d="m246.92,203.27V16.6c0-10.7-5.89-16.6-16.56-16.6h-36.43c-10.67,0-16.56,5.9-16.56,16.6v88.65c0,2.5,24,14.09,24.62,16.54,18.28,71.61,3.97,128.92-13.36,131.6,28.34,1.4,31.45,15.06,10.35,5.73,3.23-38.21,15.83-38.13,52.05-1.41.31.32,7.43,15.28,7.87,15.28h85.54c10.67,0,16.56-5.9,16.56-16.6v-36.52c0-10.7-5.89-16.6-16.56-16.6h-97.52Z" /><path class="cls-1" d="m95.68,0L0,273h74.34l16.19-47.22h80.96l15.83,47.22h73.97L165.97,0h-70.29Zm11.78,165.28l23.18-75.63,25.39,75.63h-48.58Z" /></svg>');
+    content: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 361 273"><defs><style> .cls-1 { fill: %23fefefe; } .cls-1, .cls-2 { stroke-width: 0px; } .cls-2 { fill: %23a8b6b0; } </style></defs><path class="cls-2" d="m246.92,203.27V16.6c0-10.7-5.89-16.6-16.56-16.6h-36.43c-10.67,0-16.56,5.9-16.56,16.6v88.65c0,2.5,24,14.09,24.62,16.54,18.28,71.61,3.97,128.92-13.36,131.6,28.34,1.4,31.45,15.06,10.35,5.73,3.23-38.21,15.83-38.13,52.05-1.41.31.32,7.43,15.28,7.87,15.28h85.54c10.67,0,16.56-5.9,16.56-16.6v-36.52c0-10.7-5.89-16.6-16.56-16.6h-97.52Z" /><path class="cls-1" d="m95.68,0L0,273h74.34l16.19-47.22h80.96l15.83,47.22h73.97L165.97,0h-70.29Zm11.78,165.28l23.18-75.63,25.39,75.63h-48.58Z" /></svg>');
     padding: 6px;
 }
 
@@ -409,7 +409,7 @@ div.desktop:nth-child(3) {
 /*------------------------ USER PROFILE STYLING ------------------------*/
 /* Name styling */
 .name[data-v-00c8d9df] {
-    color: rgb(var(--text-secondary));
+    color: rgb(var(--theme-primary-dim));
     font-size: 2.2rem;
     background-color: rgba(20, 20, 20, 0.9);
     padding: 6px 6px 7px 6px;
@@ -731,7 +731,7 @@ a.favourite:hover::after {
 /*------------------------ ACTIVITY FEED & HISTORY ------------------------*/
 /* Activity history */
 .history-day {
-    border-radius: 25px !important;
+    border-radius: 6px !important;
     width: 12px !important;
     height: 12px !important;
 }
@@ -743,6 +743,16 @@ a.favourite:hover::after {
 .history-day:nth-of-type(-n + 21) {
     display: none;
 }
+
+.lv-1[data-v-b79eb0f0] { background: rgba(var(--color-blue), 0.30) !important; }
+.lv-2[data-v-b79eb0f0] { background: rgba(var(--color-blue), 0.39) !important; }
+.lv-3[data-v-b79eb0f0] { background: rgba(var(--color-blue), 0.49) !important; }
+.lv-4[data-v-b79eb0f0] { background: rgba(var(--color-blue), 0.58) !important; }
+.lv-5[data-v-b79eb0f0] { background: rgba(var(--color-blue), 0.67) !important; }
+.lv-6[data-v-b79eb0f0] { background: rgba(var(--color-blue), 0.77) !important; }
+.lv-7[data-v-b79eb0f0] { background: rgba(var(--color-blue), 0.86) !important; }
+.lv-8[data-v-b79eb0f0] { background: rgba(var(--color-blue), 0.95) !important; }
+.lv-9[data-v-b79eb0f0] { background: rgb(var(--color-blue)) !important; }
 
 /* Activity entries */
 .activity-entry:has(.small) {

@@ -87,6 +87,7 @@ body,
 .user-page-unscoped.green,
 .user-page-unscoped.pink,
 .user-page-unscoped.orange,
+.user-page-unscoped.gray,
 :root {
     --color-blue: var(--theme-primary) !important;
     --color-blue-dim: var(--theme-primary-dim) !important;

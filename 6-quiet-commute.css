@@ -1444,39 +1444,8 @@ div.desktop:nth-child(3) {
     display: block !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*------------------------ Activity stuff ------------------------*/
-/* Activity Input/Edit + Filter Pills Layout (theme-aligned) */
+/*------------------------ ACTIVITY COMPOSER + FILTER PILLS ------------------------*/
+/* -------------------- Layout (composer above pills) -------------------- */
 .activity-feed-wrap {
     display: grid;
     grid-template-columns: 1fr;
@@ -1487,7 +1456,7 @@ div.desktop:nth-child(3) {
 .activity-feed-wrap > .activity-edit { grid-row: 1; }
 .activity-feed-wrap > .section-header { grid-row: 2; }
 
-/* Filter pills wrapper */
+/* -------------------- Filter pills wrapper -------------------- */
 .activity-feed-wrap > .section-header {
     background: transparent !important;
     border: none !important;
@@ -1564,19 +1533,9 @@ div.desktop:nth-child(3) {
     opacity: 1;
 }
 
-/* Composer container (feed) */
-.activity-feed-wrap > .activity-edit {
-    background: rgba(var(--bg-element)) !important;
-    border-radius: var(--border-radius) !important;
-    padding: 0 !important;
-    margin-bottom: 0 !important;
-    position: relative;
-    overflow: hidden;
-}
-
-/* -------------------- REPLY COMPOSER (same styling) -------------------- */
-/* The reply editor is not inside .activity-feed-wrap, so mirror the same rules for .reply-wrap */
-.reply-wrap .activity-edit {
+/* -------------------- Composer surface (feed + reply) -------------------- */
+/* Note: the reply editor isn't inside .activity-feed-wrap, so we style both locations. */
+:is(.activity-feed-wrap > .activity-edit, .reply-wrap .activity-edit) {
     background: rgba(var(--bg-element)) !important;
     border-radius: var(--border-radius) !important;
     padding: 0 !important;
@@ -1586,20 +1545,17 @@ div.desktop:nth-child(3) {
 }
 
 /* Hide rules notice (kept) */
-.activity-feed-wrap .activity-edit .rules-notice,
-.reply-wrap .activity-edit .rules-notice {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit .rules-notice {
     display: none !important;
 }
 
 /* Hide ONLY the "Preview:" header inside the composer */
-.activity-feed-wrap .activity-edit h2.section-header[data-v-c574a71c],
-.reply-wrap .activity-edit h2.section-header[data-v-c574a71c] {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit h2.section-header[data-v-c574a71c] {
     display: none !important;
 }
 
-/* Markdown toolbar */
-.activity-feed-wrap .activity-edit > .markdown-editor,
-.reply-wrap .activity-edit > .markdown-editor {
+/* -------------------- Composer: Markdown toolbar -------------------- */
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .markdown-editor {
     flex-wrap: wrap;
     gap: 5px;
     padding: 14px 14px 10px 14px !important;
@@ -1607,8 +1563,7 @@ div.desktop:nth-child(3) {
     margin: 0 !important;
 }
 
-.activity-feed-wrap .activity-edit > .markdown-editor > div,
-.reply-wrap .activity-edit > .markdown-editor > div {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .markdown-editor > div {
     width: 32px;
     height: 32px;
     min-width: 32px;
@@ -1624,30 +1579,26 @@ div.desktop:nth-child(3) {
     opacity: 0.85;
 }
 
-.activity-feed-wrap .activity-edit > .markdown-editor > div:hover,
-.reply-wrap .activity-edit > .markdown-editor > div:hover {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .markdown-editor > div:hover {
     background: rgba(var(--theme-primary), 0.12) !important;
     opacity: 1;
 }
 
-.activity-feed-wrap .activity-edit > .markdown-editor svg,
-.reply-wrap .activity-edit > .markdown-editor svg {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .markdown-editor svg {
     width: 15px;
     height: 15px;
     color: rgb(var(--text-primary)) !important;
 }
 
-/* Textarea */
-.activity-feed-wrap .activity-edit > .input.el-textarea,
-.reply-wrap .activity-edit > .input.el-textarea {
+/* -------------------- Composer: Textarea -------------------- */
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .input.el-textarea {
     position: relative;
     margin: 0 !important;
     background: rgba(0, 0, 0, 0) !important;
 }
 
 /* Base (unfocused) textarea background */
-.activity-feed-wrap .activity-edit > .input.el-textarea > .el-textarea__inner,
-.reply-wrap .activity-edit > .input.el-textarea > .el-textarea__inner {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .input.el-textarea > .el-textarea__inner {
     background: rgba(0, 0, 0, 0) !important; /* different bg until active */
     border-radius: 0px !important;
 
@@ -1662,14 +1613,12 @@ div.desktop:nth-child(3) {
     padding: 12px 14px !important;
 }
 
-.activity-feed-wrap .activity-edit > .input.el-textarea > .el-textarea__inner:hover,
-.reply-wrap .activity-edit > .input.el-textarea > .el-textarea__inner:hover {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .input.el-textarea > .el-textarea__inner:hover {
     background: rgba(0, 0, 0, 0.33) !important;
 }
 
 /* Focused (clicked/active) textarea background */
-.activity-feed-wrap .activity-edit > .input.el-textarea > .el-textarea__inner:focus,
-.reply-wrap .activity-edit > .input.el-textarea > .el-textarea__inner:focus {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .input.el-textarea > .el-textarea__inner:focus {
     background: rgba(0, 0, 0, 0.33) !important;
 }
 
@@ -1680,15 +1629,13 @@ div.desktop:nth-child(3) {
     box-shadow: none !important;
 }
 
-.activity-feed-wrap .activity-edit > .input.el-textarea > .el-textarea__inner::placeholder,
-.reply-wrap .activity-edit > .input.el-textarea > .el-textarea__inner::placeholder {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .input.el-textarea > .el-textarea__inner::placeholder {
     color: rgb(var(--text-tertiary)) !important;
     opacity: 0.65;
 }
 
-/* Composer actions row */
-.activity-feed-wrap .activity-edit > .actions,
-.reply-wrap .activity-edit > .actions {
+/* -------------------- Composer: Actions row -------------------- */
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit > .actions {
     align-items: center;
     gap: 10px;
     padding: 14px 14px 14px 14px !important;
@@ -1697,8 +1644,7 @@ div.desktop:nth-child(3) {
 }
 
 /* Reduce top padding once preview is showing (text entered) */
-.activity-feed-wrap .activity-edit:has(.preview:not(:empty)) > .actions,
-.reply-wrap .activity-edit:has(.preview:not(:empty)) > .actions {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit:has(.preview:not(:empty)) > .actions {
     padding: 4px 14px 14px 14px !important;
 }
 
@@ -1713,9 +1659,8 @@ div.desktop:nth-child(3) {
     margin-left: 0 !important;
 }
 
-/* Preview (default markdown preview block) */
-.activity-feed-wrap .activity-edit .preview:not(:empty),
-.reply-wrap .activity-edit .preview:not(:empty) {
+/* -------------------- Composer: Preview block -------------------- */
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit .preview:not(:empty) {
     margin: 0;
     padding: 14px !important;
     background: rgba(var(--bg-element-lighter)) !important;
@@ -1728,17 +1673,15 @@ div.desktop:nth-child(3) {
 }
 
 /* If the preview contains an activity-entry (the "post preview card"), remove the outer box
-   so you don't get "box inside a box" on the main composer. */
-.activity-feed-wrap .activity-edit .preview:has(.activity-entry.preview),
-.reply-wrap .activity-edit .preview:has(.activity-entry.preview) {
+    so you don't get "box inside a box" on the main composer. */
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit .preview:has(.activity-entry.preview) {
     padding: 0 !important;
     background: transparent !important;
 }
 
 /* Also neutralize any default card styling on the preview activity-entry itself,
    keeping only the inner .wrap as the single surface. */
-.activity-feed-wrap .activity-edit .activity-entry.preview,
-.reply-wrap .activity-edit .activity-entry.preview {
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit .activity-entry.preview {
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
@@ -1746,7 +1689,7 @@ div.desktop:nth-child(3) {
     margin: 0 !important;
 }
 
-/* Buttons */
+/* -------------------- Composer: Buttons -------------------- */
 .button[data-v-c574a71c]:hover {
     opacity: 0.8;
 }
@@ -1785,14 +1728,13 @@ div.desktop:nth-child(3) {
     margin-left: 0 !important;
 }
 
-/* Void components (match container background) */
-.activity-feed-wrap .activity-edit .void-markdown-taskbar,
-.reply-wrap .activity-edit .void-markdown-taskbar,
+/* -------------------- Void components (match container background) -------------------- */
+:is(.activity-feed-wrap, .reply-wrap) .activity-edit .void-markdown-taskbar,
 .void-dropdown-menu {
     background: rgba(var(--bg-element)) !important;
 }
 
-/*------------------------ el message box / pop up ------------------------*/
+/*------------------------ POPUPS / MESSAGE BOX ------------------------*/
 .el-message-box {
     background: rgb(var(--bg-pop-up)) !important;
 }
@@ -1801,7 +1743,7 @@ div.desktop:nth-child(3) {
     background: rgb(var(--bg-pop-up-lighter)) !important;
 }
 
-/*------------------------ border styling ------------------------*/
+/*------------------------ BORDER STYLING (SURFACES) ------------------------*/
 .overview[data-v-5c30286e] .content-wrap,
 .activity-feed-wrap > .activity-edit,
 .activity-replies > .activity-edit,

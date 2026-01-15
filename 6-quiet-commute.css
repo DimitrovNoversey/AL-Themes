@@ -762,6 +762,14 @@ a.favourite:hover::after {
     margin-bottom: 10px;
 }
 
+.activity-entry {
+    margin-bottom: 10px !important;
+}
+
+.reply {
+    margin-bottom: 10px !important;
+}
+
 .load-more[data-v-6f203cf2] {
     margin-top: 0px;
 }
@@ -1153,6 +1161,11 @@ body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.c
     display: none;
 }
 
+/* Load more button margin */
+.load-more[data-v-6f203cf2] {
+    margin-bottom: 10px;
+}
+
 /* Overview layout adjustment */
 .overview[data-v-5c30286e] {
     grid-template-columns: calc(45% - 40px) 55% !important;
@@ -1425,4 +1438,346 @@ span {
 
 div.desktop:nth-child(3) {
     display: block !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Activity Input/Edit + Filter Pills Layout (theme-aligned) */
+.activity-feed-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+/* Put composer above the filter pills */
+.activity-feed-wrap > .activity-edit { grid-row: 1; }
+.activity-feed-wrap > .section-header { grid-row: 2; }
+
+/* Filter pills wrapper */
+.activity-feed-wrap > .section-header {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 10px 0 18px !important;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Dropdown -> pill row */
+.activity-feed-wrap > .section-header .el-dropdown {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+}
+
+.activity-feed-wrap > .section-header .el-dropdown-link {
+    display: none !important;
+}
+
+/* Force the dropdown menu to behave like an inline pill list */
+.activity-feed-wrap > .section-header .el-dropdown-menu[data-v-eb51fd0e] {
+    display: flex !important;
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.el-dropdown-menu[data-v-eb51fd0e] {
+    box-shadow: none !important;
+}
+
+.el-dropdown-menu__item[data-v-eb51fd0e] {
+    line-height: 15px !important;
+}
+
+/* Individual filter pills */
+.activity-feed-wrap > .section-header .el-dropdown-menu__item {
+    padding: 8px 18px !important;
+    border-radius: 999px !important;
+
+    background: rgba(var(--bg-element)) !important;
+    border: 1px solid rgba(var(--theme-primary), 0.22) !important;
+
+    color: rgb(var(--text-secondary)) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.4px !important;
+    text-transform: lowercase !important;
+
+    cursor: pointer !important;
+    transition: var(--transition-standard) !important;
+
+    opacity: 0.85;
+    margin: 0 !important;
+    list-style: none;
+    min-width: 86px;
+    text-align: center;
+}
+
+.activity-feed-wrap > .section-header .el-dropdown-menu__item:hover {
+    background: rgba(var(--theme-primary), 0.14) !important;
+    border-color: rgba(var(--theme-primary), 0.45) !important;
+    color: rgb(var(--text-primary)) !important;
+    opacity: 1;
+}
+
+/* Composer container (feed) */
+.activity-feed-wrap > .activity-edit {
+    background: rgba(var(--bg-element)) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* -------------------- REPLY COMPOSER (same styling) -------------------- */
+/* The reply editor is not inside .activity-feed-wrap, so mirror the same rules for .reply-wrap */
+.reply-wrap .activity-edit {
+    background: rgba(var(--bg-element)) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hide rules notice (kept) */
+.activity-feed-wrap .activity-edit .rules-notice,
+.reply-wrap .activity-edit .rules-notice {
+    display: none !important;
+}
+
+/* Hide ONLY the "Preview:" header inside the composer */
+.activity-feed-wrap .activity-edit h2.section-header[data-v-c574a71c],
+.reply-wrap .activity-edit h2.section-header[data-v-c574a71c] {
+    display: none !important;
+}
+
+/* Markdown toolbar */
+.activity-feed-wrap .activity-edit > .markdown-editor,
+.reply-wrap .activity-edit > .markdown-editor {
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 14px 14px 10px 14px !important;
+    background: transparent !important;
+    margin: 0 !important;
+}
+
+.activity-feed-wrap .activity-edit > .markdown-editor > div,
+.reply-wrap .activity-edit > .markdown-editor > div {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+    background: rgba(var(--bg-element-lighter)) !important;
+
+    transition: var(--transition-standard);
+    opacity: 0.85;
+}
+
+.activity-feed-wrap .activity-edit > .markdown-editor > div:hover,
+.reply-wrap .activity-edit > .markdown-editor > div:hover {
+    background: rgba(var(--theme-primary), 0.12) !important;
+    opacity: 1;
+}
+
+.activity-feed-wrap .activity-edit > .markdown-editor svg,
+.reply-wrap .activity-edit > .markdown-editor svg {
+    width: 15px;
+    height: 15px;
+    color: rgb(var(--text-primary)) !important;
+}
+
+/* Textarea */
+.activity-feed-wrap .activity-edit > .input.el-textarea,
+.reply-wrap .activity-edit > .input.el-textarea {
+    position: relative;
+    margin: 0 !important;
+    background: rgba(0, 0, 0, 0) !important;
+}
+
+/* Base (unfocused) textarea background */
+.activity-feed-wrap .activity-edit > .input.el-textarea > .el-textarea__inner,
+.reply-wrap .activity-edit > .input.el-textarea > .el-textarea__inner {
+    background: rgba(0, 0, 0, 0) !important; /* different bg until active */
+    border-radius: 0px !important;
+
+    color: rgb(var(--text-primary)) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+
+    transition: var(--transition-standard);
+    overflow-y: auto !important;
+    max-height: 200px !important;
+    min-height: 50px !important;
+    padding: 12px 14px !important;
+}
+
+.activity-feed-wrap .activity-edit > .input.el-textarea > .el-textarea__inner:hover,
+.reply-wrap .activity-edit > .input.el-textarea > .el-textarea__inner:hover {
+    background: rgba(0, 0, 0, 0.33) !important;
+}
+
+/* Focused (clicked/active) textarea background */
+.activity-feed-wrap .activity-edit > .input.el-textarea > .el-textarea__inner:focus,
+.reply-wrap .activity-edit > .input.el-textarea > .el-textarea__inner:focus {
+    background: rgba(0, 0, 0, 0.33) !important;
+}
+
+.el-input.is-focus,
+.el-input__inner:focus,
+.el-textarea__inner:focus,
+.input-shadow .el-input__inner {
+    box-shadow: none !important;
+}
+
+.activity-feed-wrap .activity-edit > .input.el-textarea > .el-textarea__inner::placeholder,
+.reply-wrap .activity-edit > .input.el-textarea > .el-textarea__inner::placeholder {
+    color: rgb(var(--text-tertiary)) !important;
+    opacity: 0.65;
+}
+
+/* Composer actions row */
+.activity-feed-wrap .activity-edit > .actions,
+.reply-wrap .activity-edit > .actions {
+    align-items: center;
+    gap: 10px;
+    padding: 14px 14px 14px 14px !important;
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+/* Reduce top padding once preview is showing (text entered) */
+.activity-feed-wrap .activity-edit:has(.preview:not(:empty)) > .actions,
+.reply-wrap .activity-edit:has(.preview:not(:empty)) > .actions {
+    padding: 4px 14px 14px 14px !important;
+}
+
+.actions[data-v-c574a71c] {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0 !important;
+}
+
+.actions[data-v-c574a71c] .button.cancel {
+    margin-right: auto;
+    margin-left: 0 !important;
+}
+
+/* Preview (default markdown preview block) */
+.activity-feed-wrap .activity-edit .preview:not(:empty),
+.reply-wrap .activity-edit .preview:not(:empty) {
+    margin: 0;
+    padding: 14px !important;
+    background: rgba(var(--bg-element-lighter)) !important;
+}
+
+.reply.preview,
+.activity-feed-wrap .activity-edit .activity-entry.preview .wrap,
+.reply-wrap .activity-edit .activity-entry.preview .wrap {
+    margin: 10px !important;
+}
+
+/* If the preview contains an activity-entry (the "post preview card"), remove the outer box
+   so you don't get "box inside a box" on the main composer. */
+.activity-feed-wrap .activity-edit .preview:has(.activity-entry.preview),
+.reply-wrap .activity-edit .preview:has(.activity-entry.preview) {
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* Also neutralize any default card styling on the preview activity-entry itself,
+   keeping only the inner .wrap as the single surface. */
+.activity-feed-wrap .activity-edit .activity-entry.preview,
+.reply-wrap .activity-edit .activity-entry.preview {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Buttons */
+.button[data-v-c574a71c] {
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    text-transform: lowercase !important;
+
+    background: rgba(var(--theme-primary), 0.60) !important;
+    color: rgb(var(--text-primary)) !important;
+
+    transition: var(--transition-standard) !important;
+}
+
+.button[data-v-c574a71c]:hover {
+    opacity: 0.8;
+}
+
+.button.cancel[data-v-c574a71c] {
+    background: rgba(var(--bg-element-lighter)) !important;
+    border: 1px solid rgba(var(--theme-primary), 0.18) !important;
+}
+
+.button.save[data-v-c574a71c] {
+    max-height: 31.5px !important;
+}
+
+/* Keep minor spacing adjustments (but theme-aligned) */
+.home .activity-feed-wrap .section-header .el-dropdown-menu__item,
+.user .activity-feed-wrap .section-header .el-dropdown-menu__item {
+    margin-left: 0 !important;
+}
+
+/* Void components (match container background) */
+.activity-feed-wrap .activity-edit .void-markdown-taskbar,
+.reply-wrap .activity-edit .void-markdown-taskbar,
+.void-dropdown-menu {
+    background: rgba(var(--bg-element)) !important;
 }

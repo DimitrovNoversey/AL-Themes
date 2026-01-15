@@ -414,7 +414,7 @@ div.desktop:nth-child(3) {
 .name[data-v-00c8d9df] {
     color: rgb(var(--text-secondary));
     font-size: 2.2rem;
-    background-color: rgba(20, 20, 20, 0.9);
+    background-color: rgba(var(--bg-nav));
     padding: 6px 6px 7px 6px;
     border-radius: 10px;
     font-weight: 600;

@@ -911,12 +911,14 @@ a.favourite:hover::after {
 
 .text .avatar[data-v-61f9f9f6] {
     /* Main post avatar */
+    background-position: top;
     height: 50px;
     width: 50px;
 }
 
 .avatar[data-v-e1a59736] {
     /* Reply avatar */
+    background-position: top;
     height: 40px;
     width: 40px;
 }

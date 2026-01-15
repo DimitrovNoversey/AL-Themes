@@ -35,10 +35,12 @@ Modified by: @DimitrovN
     --bg-element-lighter: 10, 10, 10, 0.35;
     --bg-nav: 10, 10, 10, 0.825;
     --bg-dropdown: 20, 20, 20, 0.9;
-    --bg-pop-up: 197, 158, 113, 0.9;
+    --bg-pop-up: 10, 10, 10;
+    --bg-pop-up-lighter: 50, 50, 50;
 
     /* Layout */
     --border-radius: 10px;
+    --border-style: 0px solid rgba(var(--theme-primary), 0.22);
     --padding-v: 30px;
     --padding-h: 30px;
     --brt: var(--border-radius) var(--border-radius) 0 0;
@@ -793,7 +795,7 @@ a.favourite:hover::after {
 }
 
 .activity-replies[data-v-2820a6bb] {
-    margin: 10px;
+    margin: 10px 10px 0px 10px;
 }
 
 .actions[data-v-c574a71c] {
@@ -1471,7 +1473,7 @@ div.desktop:nth-child(3) {
 
 
 
-
+/*------------------------ Activity stuff ------------------------*/
 /* Activity Input/Edit + Filter Pills Layout (theme-aligned) */
 .activity-feed-wrap {
     display: grid;
@@ -1488,7 +1490,7 @@ div.desktop:nth-child(3) {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
-    margin: 10px 0 18px !important;
+    margin: 0px !important;
     font-size: 0;
     display: flex;
     justify-content: center;
@@ -1533,10 +1535,9 @@ div.desktop:nth-child(3) {
 /* Individual filter pills */
 .activity-feed-wrap > .section-header .el-dropdown-menu__item {
     padding: 8px 18px !important;
-    border-radius: 999px !important;
+    border-radius: var(--border-radius) !important;
 
     background: rgba(var(--bg-element)) !important;
-    border: 1px solid rgba(var(--theme-primary), 0.22) !important;
 
     color: rgb(var(--text-secondary)) !important;
     font-size: 12px !important;
@@ -1744,8 +1745,24 @@ div.desktop:nth-child(3) {
 }
 
 /* Buttons */
+.button[data-v-c574a71c]:hover {
+    opacity: 0.8;
+}
+
+.button.cancel[data-v-c574a71c] {
+    background: rgba(var(--bg-element-lighter)) !important;
+    border: 1px solid rgba(var(--theme-primary), 0.18) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.el-button {
+    background: rgb(var(--bg-pop-up-lighter)) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.el-button--primary,
 .button[data-v-c574a71c] {
-    border-radius: 999px !important;
+    border-radius: var(--border-radius) !important;
     font-weight: 700 !important;
     font-size: 1.2rem !important;
     text-transform: lowercase !important;
@@ -1754,15 +1771,6 @@ div.desktop:nth-child(3) {
     color: rgb(var(--text-primary)) !important;
 
     transition: var(--transition-standard) !important;
-}
-
-.button[data-v-c574a71c]:hover {
-    opacity: 0.8;
-}
-
-.button.cancel[data-v-c574a71c] {
-    background: rgba(var(--bg-element-lighter)) !important;
-    border: 1px solid rgba(var(--theme-primary), 0.18) !important;
 }
 
 .button.save[data-v-c574a71c] {
@@ -1780,4 +1788,25 @@ div.desktop:nth-child(3) {
 .reply-wrap .activity-edit .void-markdown-taskbar,
 .void-dropdown-menu {
     background: rgba(var(--bg-element)) !important;
+}
+
+/*------------------------ el message box / pop up ------------------------*/
+.el-message-box {
+    background: rgb(var(--bg-pop-up)) !important;
+}
+
+.el-input {
+    background: rgb(var(--bg-pop-up-lighter)) !important;
+}
+
+/*------------------------ border styling ------------------------*/
+.overview[data-v-5c30286e] .content-wrap,
+.activity-feed-wrap > .activity-edit,
+.activity-replies > .activity-edit,
+.activity-feed-wrap > .section-header .el-dropdown-menu__item,
+.activity-entry > .wrap,
+.reply,
+div.wrap:has(div.small) {
+    border: var(--border-style) !important;
+    border-right: var(--border-style) !important;
 }

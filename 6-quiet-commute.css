@@ -79,6 +79,9 @@ Modified by: @DimitrovN
     /* Spotify Widget */
     --spotfy-url-profile: url('https://spotify-uid-mask.vercel.app/api/spotify');
     --spotify-hover-gif: url('https://files.catbox.moe/hrk893.gif');
+
+    /* Discord Widget */
+    --discord-status-widget: url('https://dimi-discord-widget.vercel.app/api/discord-widget');
 }
 
 /*------------------------ THEME OVERRIDES ------------------------*/
@@ -1442,6 +1445,60 @@ span {
 
 div.desktop:nth-child(3) {
     display: block !important;
+}
+
+/*------------------------ DISCORD WIDGET ------------------------*/
+.content.container>div>div:nth-child(1)>div:nth-child(3) {
+    position: relative;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch;
+}
+
+.content.container>div>div:nth-child(1)>div:nth-child(3) > * {
+    order: 1;
+}
+
+/* Header (separate line ABOVE the widget field) */
+.content.container>div>div:nth-child(1)>div:nth-child(3)::before {
+    content: "Discord Status";
+    display: block;
+    order: 2;
+
+    font-size: 1.4rem;
+    font-family: Overpass, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: lowercase;
+    color: rgb(var(--text-primary));
+    margin: 0px 0px 10px 12px;
+}
+
+/* Widget field (box only, header is NOT inside) */
+.content.container>div>div:nth-child(1)>div:nth-child(3)::after {
+    content: "";
+    display: block;
+    order: 3;
+
+    width: 100%;
+    min-height: 144px;
+    border-radius: var(--border-radius);
+    background-color: rgba(var(--bg-element));
+    border: var(--border-style) !important;
+
+    background-image: var(--discord-status-widget);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px;
+
+    margin-bottom: 0px;
+}
+
+@media (max-width: 1040px) {
+    .content.container>div>div:nth-child(1)>div:nth-child(3)::after {
+        min-height: 135px;
+        margin-bottom: 25px;
+    }
 }
 
 /*------------------------ ACTIVITY COMPOSER + FILTER PILLS ------------------------*/

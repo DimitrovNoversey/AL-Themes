@@ -1361,7 +1361,7 @@ span {
     background: var(--spotify-hover-gif) no-repeat center;
     background-size: cover;
     padding: 0;
-    border-radius: 7px;
+    border-radius: 4px;
     z-index: 10;
     width: 416px;
     height: 130px;
@@ -1454,17 +1454,22 @@ div.desktop:nth-child(3) {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch;
+    pointer-events: none;
 }
 
 .content.container>div>div:nth-child(1)>div:nth-child(3) > * {
     order: 1;
+    pointer-events: auto;
 }
 
-/* Header (separate line ABOVE the widget field) */
+/* Header */
 .content.container>div>div:nth-child(1)>div:nth-child(3)::before {
     content: "Discord Status";
     display: block;
     order: 2;
+
+    cursor: default;
+    pointer-events: auto;
 
     font-size: 1.4rem;
     font-family: Overpass, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -1475,11 +1480,40 @@ div.desktop:nth-child(3) {
     margin: 0px 0px 10px 12px;
 }
 
+.content.container>div>div:nth-child(1)>div:nth-child(3):hover::after {
+    box-sizing: border-box;
+    padding: 6px;
+
+    background-image: var(--discord-hover-gif), var(--discord-status-widget);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover, 400px;
+    background-origin: content-box, padding-box;
+    background-clip: content-box, padding-box;
+
+    border-radius: var(--border-radius);
+    filter: brightness(0.95);
+}
+
+.content.container>div>div:nth-child(1)>div:nth-child(3):has(> h2:hover)::after,
+.content.container>div>div:nth-child(1)>div:nth-child(3):has(.genres:hover)::after {
+    background-image: var(--discord-status-widget);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px;
+
+    padding: 0;
+    background-origin: padding-box;
+    background-clip: border-box;
+}
+
 /* Widget field (box only, header is NOT inside) */
 .content.container>div>div:nth-child(1)>div:nth-child(3)::after {
     content: "";
     display: block;
     order: 3;
+
+    pointer-events: none;
 
     width: 100%;
     min-height: 144px;

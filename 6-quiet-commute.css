@@ -77,11 +77,12 @@ Modified by: @DimitrovN
     --font-primary: "Mulish", sans-serif;
 
     /* Spotify Widget */
-    --spotfy-url-profile: url('https://spotify-uid-mask.vercel.app/api/spotify');
+    --spotify-url-profile: url('https://spotify-uid-mask.vercel.app/api/spotify');
     --spotify-hover-gif: url('https://files.catbox.moe/hrk893.gif');
 
     /* Discord Widget */
     --discord-status-widget: url('https://dimi-discord-widget.vercel.app/api/discord-widget');
+    --discord-hover-gif: url('https://files.catbox.moe/pe5gs9.gif');
 }
 
 /*------------------------ THEME OVERRIDES ------------------------*/
@@ -1402,7 +1403,7 @@ span {
 }
 
 .genres>div:nth-child(1):after {
-    content: var(--spotfy-url-profile);
+    content: var(--spotify-url-profile);
     display: inline-block;
     position: absolute;
     background: transparent;
@@ -1416,7 +1417,7 @@ span {
 }
 
 /* spotify logo */
-/* .overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]>a::after {
+/* .overview>.section>.about>.content-wrap>.markdown b[href="spotify"]>a::after {
     content: '\f1bc';
     position: absolute;
     font-family: 'FontAwesome';
@@ -1429,8 +1430,8 @@ span {
 
 @media (max-width: 1040px) {
 
-    .overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]::before,
-    .overview>.section>.about>.content-wrap>.markdown b[href="Spotfy"]>a::after {
+    .overview>.section>.about>.content-wrap>.markdown b[href="spotify"]::before,
+    .overview>.section>.about>.content-wrap>.markdown b[href="spotify"]>a::after {
         display: none !important;
     }
 

@@ -1353,7 +1353,7 @@ span {
 }
 
 .content.container>div>div:nth-child(1)>div:nth-child(3)>h2 {
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
     position: relative;
 }
 

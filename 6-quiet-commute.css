@@ -892,6 +892,14 @@ a.favourite:hover::after {
     grid-template-columns: repeat(auto-fill, 140px);
 }
 
+.medialist.cards .list-section {
+    background: rgba(0, 0, 0, 0) !important;
+}
+
+.medialist.cards .entry-card .title {
+    color: rgb(var(--text-primary));
+}
+
 /* Cover brightness */
 .cover[data-v-61f9f9f6] {
     filter: brightness(80%);

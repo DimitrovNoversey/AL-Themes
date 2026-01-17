@@ -1449,12 +1449,12 @@ span {
     }
 }
 
-div.desktop:nth-child(3) {
+body:has(.overview .header > a[href="/user/DimitrovN/"].name) div.desktop:nth-child(3) {
     display: block !important;
 }
 
 /*------------------------ DISCORD WIDGET ------------------------*/
-.content.container>div>div:nth-child(1)>div:nth-child(3) {
+body:has(.overview .header > a[href="/user/DimitrovN/"].name) .content.container>div>div:nth-child(1)>div:nth-child(3) {
     position: relative;
     display: flex !important;
     flex-direction: column !important;
@@ -1462,14 +1462,14 @@ div.desktop:nth-child(3) {
     pointer-events: none;
 }
 
-.content.container>div>div:nth-child(1)>div:nth-child(3) > * {
+body:has(.overview .header > a[href="/user/DimitrovN/"].name) .content.container>div>div:nth-child(1)>div:nth-child(3) > * {
     order: 3;
     margin-bottom: 0px;
     pointer-events: auto;
 }
 
 /* Header */
-.content.container>div>div:nth-child(1)>div:nth-child(3)::before {
+body:has(.overview .header > a[href="/user/DimitrovN/"].name) .content.container>div>div:nth-child(1)>div:nth-child(3)::before {
     content: "Discord Status";
     display: block;
     order: 1;
@@ -1486,7 +1486,7 @@ div.desktop:nth-child(3) {
     margin: 0px 0px 10px 12px;
 }
 
-.content.container>div>div:nth-child(1)>div:nth-child(3):hover::after {
+body:has(.overview .header > a[href="/user/DimitrovN/"].name) .content.container>div>div:nth-child(1)>div:nth-child(3):hover::after {
     box-sizing: border-box;
     padding: 6px;
 
@@ -1501,8 +1501,8 @@ div.desktop:nth-child(3) {
     filter: brightness(0.95);
 }
 
-.content.container>div>div:nth-child(1)>div:nth-child(3):has(> h2:hover)::after,
-.content.container>div>div:nth-child(1)>div:nth-child(3):has(.genres:hover)::after {
+body:has(.overview .header > a[href="/user/DimitrovN/"].name) .content.container>div>div:nth-child(1)>div:nth-child(3):has(> h2:hover)::after,
+body:has(.overview .header > a[href="/user/DimitrovN/"].name) .content.container>div>div:nth-child(1)>div:nth-child(3):has(.genres:hover)::after {
     background-image: var(--discord-status-widget);
     background-repeat: no-repeat;
     background-position: center;
@@ -1514,7 +1514,7 @@ div.desktop:nth-child(3) {
 }
 
 /* Widget field (box only, header is NOT inside) */
-.content.container>div>div:nth-child(1)>div:nth-child(3)::after {
+body:has(.overview .header > a[href="/user/DimitrovN/"].name) .content.container>div>div:nth-child(1)>div:nth-child(3)::after {
     content: "";
     display: block;
     order: 2;
@@ -1536,7 +1536,7 @@ div.desktop:nth-child(3) {
 }
 
 @media (max-width: 1040px) {
-    .content.container>div>div:nth-child(1)>div:nth-child(3)::after {
+    body:has(.overview .header > a[href="/user/DimitrovN/"].name) .content.container>div>div:nth-child(1)>div:nth-child(3)::after {
         min-height: 135px;
         margin-bottom: 25px;
     }

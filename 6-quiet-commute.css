@@ -1581,17 +1581,17 @@ div.desktop:nth-child(3) {
     border: none !important;
     padding: 0 !important;
     margin: 0px !important;
-    font-size: 0 !important;
-    display: flex !important;
-    justify-content: center !important;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
 }
 
 /* Dropdown -> pill row */
 .activity-feed-wrap > .section-header .el-dropdown {
-    display: flex !important;
-    gap: 8px !important;
-    width: 100% !important;
-    justify-content: center !important;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
 }
 
 .activity-feed-wrap > .section-header .el-dropdown-link {
@@ -1599,7 +1599,7 @@ div.desktop:nth-child(3) {
 }
 
 /* Force the dropdown menu to behave like an inline pill list */
-.activity-feed-wrap > .section-header .el-dropdown-menu {
+.activity-feed-wrap > .section-header .el-dropdown-menu[data-v-eb51fd0e] {
     display: flex !important;
     position: static !important;
     transform: none !important;
@@ -1609,16 +1609,16 @@ div.desktop:nth-child(3) {
     border: none !important;
     padding: 0 !important;
 
-    gap: 8px !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.activity-feed-wrap > .section-header .el-dropdown-menu {
+.el-dropdown-menu[data-v-eb51fd0e] {
     box-shadow: none !important;
 }
 
-.activity-feed-wrap > .section-header .el-dropdown-menu__item {
+.el-dropdown-menu__item[data-v-eb51fd0e] {
     line-height: 15px !important;
 }
 

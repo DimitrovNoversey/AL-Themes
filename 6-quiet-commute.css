@@ -1566,14 +1566,14 @@ div.desktop:nth-child(3) {
 /*------------------------ ACTIVITY COMPOSER + FILTER PILLS ------------------------*/
 /* -------------------- Layout (composer above pills) -------------------- */
 .activity-feed-wrap {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
 }
 
 /* Put composer above the filter pills */
-.activity-feed-wrap > .activity-edit { grid-row: 1; }
-.activity-feed-wrap > .section-header { grid-row: 2; }
+.activity-feed-wrap > .activity-edit { grid-row: 1 !important; }
+.activity-feed-wrap > .section-header { grid-row: 2 !important; }
 
 /* -------------------- Filter pills wrapper -------------------- */
 .activity-feed-wrap > .section-header {
@@ -1581,17 +1581,17 @@ div.desktop:nth-child(3) {
     border: none !important;
     padding: 0 !important;
     margin: 0px !important;
-    font-size: 0;
-    display: flex;
-    justify-content: center;
+    font-size: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
 }
 
 /* Dropdown -> pill row */
 .activity-feed-wrap > .section-header .el-dropdown {
-    display: flex;
-    gap: 8px;
-    width: 100%;
-    justify-content: center;
+    display: flex !important;
+    gap: 8px !important;
+    width: 100% !important;
+    justify-content: center !important;
 }
 
 .activity-feed-wrap > .section-header .el-dropdown-link {
@@ -1609,9 +1609,9 @@ div.desktop:nth-child(3) {
     border: none !important;
     padding: 0 !important;
 
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
 }
 
 .activity-feed-wrap > .section-header .el-dropdown-menu {

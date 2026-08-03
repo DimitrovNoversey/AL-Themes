@@ -915,6 +915,8 @@ a.favourite:hover::after {
 .text .name {
     /* Main post name */
     font-size: 1.7rem;
+    line-height: 10px !important;
+    height: 25px !important;
 }
 
 .reply .name {

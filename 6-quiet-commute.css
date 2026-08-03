@@ -1649,7 +1649,7 @@ div.desktop:nth-child(3) {
     text-align: center;
 }
 
-.activity-feed-wrap > .section-header .el-dropdown-menu__item:hover {
+.user .activity-feed-wrap .section-header .el-dropdown-menu__item:hover {
     background: rgba(var(--theme-primary), 0.14) !important;
     border-color: rgba(var(--theme-primary), 0.45) !important;
     color: rgb(var(--text-primary)) !important;

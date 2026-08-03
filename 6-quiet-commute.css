@@ -1203,7 +1203,7 @@ body:has(.content > .overview, .favourites .favourites) .tooltip .content:has(.c
 }
 
 /* Overview layout adjustment */
-.overview {
+.user .overview {
     grid-template-columns: calc(45% - 40px) 55% !important;
 }
 
